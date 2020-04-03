@@ -1,3 +1,4 @@
+<!--
 !["Microsoft Cloud Workshops"][logo]
 
 <div class="MCWHeader1">
@@ -21,9 +22,10 @@ The names of manufacturers, products, or URLs are provided for informational pur
 © 2020 Microsoft Corporation. All rights reserved.
 
 **Contents**
+-->
 
 <!-- TOC -->
-
+<!--
 - [Cloud-native applications before the hands-on lab setup guide](#cloud-native-applications-before-the-hands-on-lab-setup-guide)
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
@@ -37,9 +39,22 @@ The names of manufacturers, products, or URLs are provided for informational pur
     - [Task 8: Connect securely to the build agent](#task-8-connect-securely-to-the-build-agent)
     - [Task 9: Complete the build agent setup](#task-9-complete-the-build-agent-setup)
     - [Task 10: Clone Repositories to the Build Agent](#task-10-clone-repositories-to-the-build-agent)
-
+- [クラウド ネイティブのアプリケーションに関するハンズオン ラボの事前セットアップ ガイド <a name="クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド"></a>](#%e3%82%af%e3%83%a9%e3%82%a6%e3%83%89-%e3%83%8d%e3%82%a4%e3%83%86%e3%82%a3%e3%83%96%e3%81%ae%e3%82%a2%e3%83%97%e3%83%aa%e3%82%b1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e3%83%8f%e3%83%b3%e3%82%ba%e3%82%aa%e3%83%b3-%e3%83%a9%e3%83%9c%e3%81%ae%e4%ba%8b%e5%89%8d%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97-%e3%82%ac%e3%82%a4%e3%83%89)
+  - [前提条件 <a name="前提条件"></a>](#%e5%89%8d%e6%8f%90%e6%9d%a1%e4%bb%b6)
+  - [ハンズオン ラボを始める前に <a name="ハンズオン-ラボを始める前に"></a>](#%e3%83%8f%e3%83%b3%e3%82%ba%e3%82%aa%e3%83%b3-%e3%83%a9%e3%83%9c%e3%82%92%e5%a7%8b%e3%82%81%e3%82%8b%e5%89%8d%e3%81%ab)
+    - [タスク 1: Azure Cloud Shell のセットアップ <a name="タスク-1-azure-cloud-shell-のセットアップ"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-1-azure-cloud-shell-%e3%81%ae%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97)
+    - [タスク 2: スターター ファイルのダウンロード <a name="タスク-2-スターター-ファイルのダウンロード"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-2-%e3%82%b9%e3%82%bf%e3%83%bc%e3%82%bf%e3%83%bc-%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89)
+    - [タスク 3: リソース グループ <a name="タスク-3-リソース-グループ"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-3-%e3%83%aa%e3%82%bd%e3%83%bc%e3%82%b9-%e3%82%b0%e3%83%ab%e3%83%bc%e3%83%97)
+    - [タスク 4: SSH キーの作成 <a name="タスク-4-ssh-キーの作成"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-4-ssh-%e3%82%ad%e3%83%bc%e3%81%ae%e4%bd%9c%e6%88%90)
+    - [タスク 5: サービス プリンシパルの作成 <a name="タスク-5-サービス-プリンシパルの作成"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-5-%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9-%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b7%e3%83%91%e3%83%ab%e3%81%ae%e4%bd%9c%e6%88%90)
+    - [タスク 6: ARM テンプレートの展開 <a name="タスク-6-arm-テンプレートの展開"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-6-arm-%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%81%ae%e5%b1%95%e9%96%8b)
+    - [タスク 7: Azure DevOps プロジェクトのセットアップ <a name="タスク-7-azure-devops-プロジェクトのセットアップ"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-7-azure-devops-%e3%83%97%e3%83%ad%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%81%ae%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97)
+    - [タスク 8: ビルド エージェントとのセキュアな接続 <a name="タスク-8-ビルド-エージェントとのセキュアな接続"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-8-%e3%83%93%e3%83%ab%e3%83%89-%e3%82%a8%e3%83%bc%e3%82%b8%e3%82%a7%e3%83%b3%e3%83%88%e3%81%a8%e3%81%ae%e3%82%bb%e3%82%ad%e3%83%a5%e3%82%a2%e3%81%aa%e6%8e%a5%e7%b6%9a)
+    - [タスク 9: ビルド エージェントのセットアップの完了 <a name="タスク-9-ビルド-エージェントのセットアップの完了"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-9-%e3%83%93%e3%83%ab%e3%83%89-%e3%82%a8%e3%83%bc%e3%82%b8%e3%82%a7%e3%83%b3%e3%83%88%e3%81%ae%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%ae%e5%ae%8c%e4%ba%86)
+    - [タスク 10: リポジトリをビルド エージェントに複製 <a name="タスク-10-リポジトリをビルド-エージェントに複製"></a>](#%e3%82%bf%e3%82%b9%e3%82%af-10-%e3%83%aa%e3%83%9d%e3%82%b8%e3%83%88%e3%83%aa%e3%82%92%e3%83%93%e3%83%ab%e3%83%89-%e3%82%a8%e3%83%bc%e3%82%b8%e3%82%a7%e3%83%b3%e3%83%88%e3%81%ab%e8%a4%87%e8%a3%bd)
+-->
 <!-- /TOC -->
-
+<!--
 # Cloud-native applications before the hands-on lab setup guide
 
 ## Requirements
@@ -289,7 +304,7 @@ In this section, you configure and execute an ARM template that creates all the 
 6. Create the needed resources by typing the following instruction (case sensitive), replacing {resourceGroup} with the name of the previously created resource group:
 
    ```bash
-   az deployment group create --resource-group {resourceGroup} --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+   az group deployment create --resource-group {resourceGroup} --template-file azuredeploy.json --parameters azuredeploy.parameters.json
    ```
 
    This command takes up to 30 to 60 minutes to deploy all lab resources. You can continue to the next task to setup Azure DevOps while the deployment runs.
@@ -494,7 +509,7 @@ VM.
    > **Note**: If you don't have a cloud shell available, refer back to [Task 1: Setup Azure Cloud Shell](#task-1-setup-azure-cloud-shell).
 
    ```bash
-   az vm show -d -g fabmedical-[SUFFIX] -n fabmedical-[SHORT_SUFFIX] --query publicIps -o tsv
+   az vm show -d -g fabmedical-[SUFFIX] -n fabmedical-[SHORTssh  SUFFIX] --query publicIps -o tsv
    ```
 
    Example:
@@ -709,3 +724,715 @@ You should follow all steps provided _before_ performing the Hands-on lab.
 
 [logo]: https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png
 [devops]: https://dev.azure.com
+
+-->
+
+
+!["マイクロソフト クラウド ワークショップ"][logo]
+
+<div class="MCWHeader1">
+クラウド ネイティブのアプリケーション
+</div>
+
+<div class="MCWHeader2">
+ハンズオン ラボの事前セットアップ ガイド
+</div>
+
+<div class="MCWHeader3">
+2020 年 2 月
+</div>
+
+このドキュメントに記載されている情報 (URL や他のインターネット Web サイト参照を含む) は、将来予告なしに変更することがあります。別途記載されていない場合、このソフトウェアおよび関連するドキュメントで使用している会社、組織、製品、ドメイン名、電子メール アドレス、ロゴ、人物、場所、出来事などの名称は架空のものです。実在する商品名、団体名、個人名などとは一切関係ありません。お客様ご自身の責任において、適用されるすべての著作権関連法規に従ったご使用をお願いいたします。著作権法による制限に関係なく、マイクロソフトの書面による許可なしに、このドキュメントの一部または全部を複製したり、検索システムに保存または登録したり、別の形式に変換したりすることは、手段、目的を問わず禁じられています。ここでいう手段とは、複写や記録など、電子的、または物理的なすべての手段を含みます。
+
+マイクロソフトは、このドキュメントに記載されている内容に関し、特許、特許申請、商標、著作権、またはその他の無体財産権を有する場合があります。別途マイクロソフトのライセンス契約上に明示の規定のない限り、このドキュメントはこれらの特許、商標、著作権、またはその他の知的財産権に関する権利をお客様に許諾するものではありません。
+
+製造元名、製品名、URL は、情報提供のみを目的としており、これらの製造元またはマイクロソフトのテクノロジを搭載した製品の使用について、マイクロソフトは、明示的、黙示的、または法令によるいかなる表明も保証もいたしません。製造元または製品に対する言及は、マイクロソフトが当該製造元または製品を推奨していることを示唆するものではありません。掲載されているリンクは、外部サイトへのものである場合があります。これらのサイトはマイクロソフトの管理下にあるものではなく、リンク先のサイトのコンテンツ、リンク先のサイトに含まれているリンク、または当該サイトの変更や更新について、マイクロソフトは一切責任を負いません。リンク先のサイトから受信した Web キャストまたはその他の形式での通信について、マイクロソフトは責任を負いません。マイクロソフトは受講者の便宜を図る目的でのみ、これらのリンクを提供します。また、リンクの掲載は、マイクロソフトが当該サイトまたは当該サイトに掲載されている製品を推奨していることを示唆するものではありません。
+
+© 2020 Microsoft Corporation. All rights reserved.
+
+**このドキュメントの内容**
+
+<!-- TOC -->
+
+- [クラウド ネイティブのアプリケーションに関するハンズオン ラボの事前セットアップ ガイド](#クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド)
+  - [前提条件](#前提条件)
+  - [ハンズオン ラボを始める前に](#ハンズオン-ラボを始める前に)
+    - [タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)
+    - [タスク 2: スターター ファイルのダウンロード](#タスク-2-スターター-ファイルのダウンロード)
+    - [タスク 3: リソース グループ](#タスク-3-リソース-グループ)
+    - [タスク 4: SSH キーの作成](#タスク-4-ssh-キーの作成)
+    - [タスク 5: サービス プリンシパルの作成](#タスク-5-サービス-プリンシパルの作成)
+    - [タスク 6: ARM テンプレートの展開](#タスク-6-arm-テンプレートの展開)
+    - [タスク 7: Azure DevOps プロジェクトのセットアップ](#タスク-7-azure-devops-プロジェクトのセットアップ)
+    - [タスク 8: ビルド エージェントとのセキュアな接続](#タスク-8-ビルド-エージェントとのセキュアな接続)
+    - [タスク 9: ビルド エージェントのセットアップの完了](#タスク-9-ビルド-エージェントのセットアップの完了)
+    - [タスク 10: リポジトリをビルド エージェントに複製](#タスク-10-リポジトリをビルド-エージェントに複製)
+
+<!-- /TOC -->
+
+# クラウド ネイティブのアプリケーションに関するハンズオン ラボの事前セットアップ ガイド <a name="クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド"></a>
+
+## 前提条件 <a name="前提条件"></a>
+
+1. Microsoft Azure サブスクリプションが従量課金制または MSDN であること。
+
+   - 試用版のサブスクリプションは使用できません。
+
+   - このラボのセットアップ (「[タスク 5: サービス プリンシパルの作成](#タスク-5-サービス-プリンシパルの作成)」を含む) を完了するには、お使いのアカウントが以下の条件を満たしている必要があります。
+
+     - 使用するサブスクリプション用に、組み込みの[オーナー (英語)](https://docs.microsoft.com/ja-jp/azure/role-based-access-control/built-in-roles#owner) のロールを保有している。
+
+     - 使用している Azure AD テナントの[メンバー (英語)](https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/users-default-permissions#member-and-guest-users) ユーザーである (ゲスト ユーザーには、必要な権限がありません)。
+
+     > **注:** これらの要件を満たしていない場合、ポータルにログインしてサービス プリンシパルを作成する作業は、サブスクリプション オーナーの権限を持つ他のメンバー ユーザーに依頼してください。
+
+   - 「[タスク 6: ARM テンプレートの展開](#タスク-6-arm-テンプレートの展開)」でビルド エージェントと Azure Kubernetes Service クラスターを作成できるよう、サブスクリプションには十分な数のコアを用意する必要があります。ラボの指示に正確に従えば、必要なコアの数は 8 つですが、エージェントの数を増やす場合や、VM のサイズを大きくするときには、さらにコアが必要になります。ラボの開始前に必要な手順を実行し、追加コアの要求申請が必要ないか確認しましょう。
+
+2. Azure DevOps のアカウント
+
+3. 以下のソフトを備えたローカル マシンまたは仮想マシン
+
+   - 任意のブラウザー。ラボの実装テストの一貫性を保つうえで Chrome が望ましい。
+
+4. 演習では、別のツールのインストールを求められます。
+
+## ハンズオン ラボを始める前に <a name="ハンズオン-ラボを始める前に"></a>
+
+**所要時間**: 1 時間
+
+ハンズオン ラボに参加する_前_に、リハーサルとしてこのセクションで説明する手順すべてを実際に確認しておくようお勧めします。その際、余裕を持ったスケージュールを立ててください。一部のステップである程度の時間が必要になるためです。
+
+### タスク 1: Azure Cloud Shell のセットアップ <a name="タスク-1-azure-cloud-shell-のセットアップ"></a>
+
+1. メニュー バーの Azure Cloud Shell のアイコンを選択して、Azure Cloud Shell を開きます。
+
+   ![メニュー バーにある Azure Cloud Shell のアイコンが強調表示されています。](media/b4-image35.png)
+
+2. ブラウザー ウィンドウで Azure Cloud Shell が起動します。選択を求められた場合は、[Bash] を選択します。または、Azure Cloud Shell のメニュー バーの左にあるドロップダウンで [Bash] を選択します (以下を参照)。
+
+   ![このスクリーンショットには、ブラウザー ウィンドウで Azure Cloud Shell が起動して Bash が選択されたところを表示しています。](media/b4-image36.png)
+
+3. 既定のサブスクリプションが正しく設定されていることを確認します。現在のサブスクリプションを表示するには、以下のように入力します。
+
+   ```bash
+   az account show
+   ```
+
+   ![Bash ウィンドウのこのスクリーンショットでは、az account show が入力され、コマンド プロンプトで実行されており、ウィンドウには、サブスクリプションのいくつかの情報が表示されています。一部の情報はマスキングしています。](media/b4-image37.png)
+
+4. すべてのサブスクリプションを一覧表示するには、以下のように入力します。
+
+   ```bash
+   az account list
+   ```
+
+   ![Bash ウィンドウのこのスクリーンショットでは、az account list が入力され、コマンド プロンプトで実行されており、ウィンドウには、サブスクリプションのいくつかの情報が表示されています。一部の情報はマスキングしています。](media/b4-image38.png)
+
+5. 既定のサブスクリプションを今選択しているもの以外に変更する場合は以下のように入力します。{id} の部分には、変更先のサブスクリプションの ID の値を入力します。
+
+   ```bash
+   az account set --subscription {id}
+   ```
+
+### タスク 2: スターター ファイルのダウンロード <a name="タスク-2-スターター-ファイルのダウンロード"></a>
+
+このタスクでは、`git` でラボのコンテンツを Azure Cloud Shell にコピーし、ラボのスターター ファイルが利用できるようにします。
+
+> **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
+
+1. 以下のコマンドを入力して `Enter` キーを押します。
+
+   ```bash
+   git clone https://github.com/microsoft/MCW-Cloud-native-applications.git
+   ```
+
+2. ラボのファイルがダウンロードされます。
+
+   ![Bash ウィンドウのこのスクリーンショットでは、git clone が入力され、コマンド プロンプトで実行されており、その出力結果が表示されています。](media/b4-2019-09-30_21-25-06.png)
+
+3. `.git` フォルダーは必要ないので、削除すれば、後の作業がシンプルになります。以下のコマンドを実行します。
+
+   ```bash
+   rm -rf MCW-Cloud-native-applications/.git
+   ```
+
+### タスク 3: リソース グループ <a name="タスク-3-リソース-グループ"></a>
+
+Azure リソース グループを作成し、このハンズオン ラボで作成するリソースの大部分を格納します。これによって、後のクリーンアップの作業が容易になります。
+
+1. Azure Cloud Shell ウィンドウで、以下に示すようなコマンドを入力します。
+
+   > **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
+
+   ```bash
+   az group create -l [LOCATION] -n fabmedical-[SUFFIX]
+   ```
+
+   - **SUFFIX (サフィックス):** このラボでは全体を通じ、サフィックスは、メール アドレスのプレフィックスや姓名、イニシャルなどのリソースを一意のものとして扱う場合に使用します。
+
+   - **LOCATION (ロケーション):** すべての Azure Container Registry SKU を利用できるようにする必要のある地域を選択します。現在利用可能な地域は次のとおりです。カナダ中部、カナダ東部、米国北中部、米国中部、米国中南部、米国東部、米国東部 2、米国西部、米国西部 2、米国中西部、フランス中部、英国南部、英国西部、北ヨーロッパ、西ヨーロッパ、オーストラリア東部、オーストラリア南東部、ブラジル南部、インド中部、インド南部、東日本、西日本、韓国中部、東南アジア、東アジア。Azure で作成したリソースをすべて同じ地域に配置するうえで、この情報を後のステップで使用します。そのため、この情報を忘れないようにしてください。
+
+   例
+
+   ```bash
+   az group create -l westus -n fabmedical-sol
+   ```
+
+2. 作業が完了すると、Azure ポータルにリソース グループが表示されます。
+
+   ![Azure ポータルのこのスクリーンショットには、fabmedical-sol のリソース グループが表示されています。](media/b4-image8.png)
+
+### タスク 4: SSH キーの作成 <a name="タスク-4-ssh-キーの作成"></a>
+
+次の演習では VM を作成します。このセクションでは、VM にセキュアにアクセスするための SSH キーを作成します。
+
+1. Cloud Shell のコマンド ラインで以下のコマンドを入力し、SSH キーのディレクトリが存在することを確認します。出力に表示されるエラーは無視して構いません。
+
+   > **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
+
+   ```bash
+   mkdir .ssh
+   ```
+
+2. Cloud Shell のコマンド ラインで以下のコマンドを入力し、SSH キーのペアを生成します。「admin」は任意の名前やハンドルに変更できます。
+
+   ```bash
+   ssh-keygen -t RSA -b 2048 -C admin@fabmedical
+   ```
+
+3. 生成したキーをファイルに保存するよう求められたときは、ファイル名として「`.ssh/fabmedical`」と入力します。
+
+4. 画面の指示に従い、パスフレーズを入力します。**入力したパスフレーズは忘れないようにしてください。**
+
+5. 「.ssh/fabmedical」と入力したので、ssh-keygen は、ユーザー フォルダーの「.ssh」フォルダーにファイルを生成します。既定では、Cloud Shell はこのフォルダーを開きます。
+
+   ![Azure Cloud Shell ウィンドウのこのスクリーンショットでは、ssh-keygen -t RSA -b 2048 -C admin@fabmedical が入力され、コマンド プロンプトで実行されており、ウィンドウには、生成されたキーに関する情報が表示されています。](media/b4-image57.png)
+
+6. Cloud Shell のコマンド ラインで以下のコマンドを入力し、公開キーの内容を出力します。後で使用できるよう、この情報をコピーします。
+
+    ```bash
+    cat .ssh/fabmedical.pub
+    ```
+
+7. この Cloud Shell を開いたままにして、既定のディレクトリにとどまります。このシェルは後のタスクで使用します。
+
+    ![Azure Cloud Shell ウィンドウのこのスクリーンショットでは、cat .ssh/fabmedical が入力され、コマンド プロンプトで実行されており、ウィンドウには、公開キーの内容に関する情報が表示されています。](media/b4-image571.png)
+
+### タスク 5: サービス プリンシパルの作成 <a name="タスク-5-サービス-プリンシパルの作成"></a>
+
+Azure Kubernetes Service には、Azure API とやり取りをするために、Azure Active Directory のサービス プリンシパルが必要です。サービス プリンシパルは、ユーザー定義のルートやレイヤー 4 の Azure Load Balancer などのリソースを動的に管理する際に必要になります。サービス プリンシパルを設定する最も簡単な方法は、Azure Cloud Shell を使用する方法です。
+
+> **注**: このタスクを完了するためには、お使いのアカウントが、使用するサブスクリプションに対応したロールの組み込まれた[オーナー (英語)](https://docs.microsoft.com/ja-jp/azure/role-based-access-control/built-in-roles#owner) であり、使用する Azure AD テナントの[メンバー (英語)](https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/users-default-permissions#member-and-guest-users) ユーザーであることを確認します。以下の要件を満たしていないと、サービス プリンシパルの作成時にトラブルが発生する可能性があります。
+
+1. サービス プリンシパルを作成するには、Cloud Shell のコマンド ラインで以下のコマンドを入力します。{id} はお使いのサブスクリプション ID と置き換えます。サフィックスは、名前を一意のものとして扱うために選択したサフィックスと置き換えます。
+
+   > **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
+
+   ```bash
+   az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/{id}" --name="http://Fabmedical-sp-{SUFFIX}"
+   ```
+
+2. コマンドにより、以下のような出力が生成されます。この情報は後でユーザーにコピーします。
+
+   ![Bash ウィンドウのこのスクリーンショットでは、az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/{id}" --name="Fabmedical-sp-SUFFIX" が入力され、コマンド プロンプトで実行されており、ウィンドウには、サービス プリンシパルの情報が表示されていますが、現時点では、まだキャプチャできていない情報があります。この点はこのコースの今後のバージョンで改善する予定です。](media/b4-image39.png)
+
+3. サービス プリンシパルのオブジェクト ID を取得するには、以下のコマンドを入力します。{appId} は、お使いのサービス プリンシパルの AppID と置き換えます。
+
+   ```bash
+   az ad sp show --id {appId} --query "{objectId:@.objectId}"
+   ```
+
+4. コマンドにより、以下のような出力が生成されます。この情報は後でユーザーにコピーします。
+
+   ![Bash ウィンドウのこのスクリーンショットでは、az ad sp show --id d41261a3-d8b8-4cf0-890d-1fb6efc20a67 --query "{objectId:@.objectId}" が入力され、コマンド プロンプトで実行されており、ウィンドウには、サービス プリンシパルの情報が表示されています。](media/b4-image58.png)
+
+### タスク 6: ARM テンプレートの展開 <a name="タスク-6-arm-テンプレートの展開"></a>
+
+このセクションでは、ARM テンプレートを構成して実行し、演習全体で必要になるすべてのリソースを作成します。
+
+1. Azure Cloud Shell で、以下のように、ARM テンプレートのディレクトリへ切り替えを行います。
+
+   > **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
+
+   ```bash
+   cd MCW-Cloud-native-applications/Hands-on\ lab/arm/
+   ```
+
+2. azuredeploy.parameters.json ファイルを開き、Azure Cloud Shell エディターで編集します。
+
+   ```bash
+   code azuredeploy.parameters.json
+   ```
+
+   ![このスクリーンショットには、Azure Cloud Shell のオンライン エディターが表示されています。](media/b4-image581.png)
+
+3. 環境に合わせて各種のキーの値を更新します。
+
+   - **Suffix**: 最大 3 文字で、短縮形の SUFFIX (サフィックス) を入力します。
+   - **VirtualMachineAdminUsernameLinux**: Linux ビルド エージェント VM 管理者のユーザー名 (例: `「adminfabmedical」`) を入力します。
+   - **VirtualMachineAdminPublicKeyLinux**: Linux ビルド エージェント VM 管理者の SSH 公開キーを入力します。この値は、前に作成した `.ssh/fabmedical.pub` ファイルにあります (例: `「ssh-rsa AAAAB3N(...)vPiybQV admin@fabmedical」`)。
+   - **KubernetesServicePrincipalClientId**: Kubernetes クラスター サービスのプリンシパル クライアント ID を入力します。前のステップで使ったサービス プリンシパルの「AppID」を使用します。
+   - **KubernetesServicePrincipalClientSecret**: Kubernetes クラスター サービスのプリンシパル クライアント シークレットを入力します。前のステップで使ったサービス プリンシパルの「パスワード」を使用します。
+   - **KubernetesServicePrincipalObjectId**: Kubernetes クラスター サービスのプリンシパル オブジェクト ID を入力します。前のステップで使ったサービス プリンシパルの「objectId」を使用します。
+   - **CosmosLocation**: Azure Cosmos DB のプライマリ拠点を入力します。前に作成したリソース グループと同じ拠点を使用します。(例: `「eastus」`)。
+   - **CosmosLocationName**: Azure Cosmos DB のプライマリ拠点の名称を入力します。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「米国東部」`)。
+   - **CosmosPairedLocation**: Azure Cosmos DB のセカンダリ拠点を入力します。以下のリストの拠点を使用します。(例: `「westus」`)。
+   - **CosmosPairedLocationName**: Azure Cosmos DB のセカンダリ拠点の名称を入力します。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「米国西部」`)。
+   
+
+   | 拠点           | 拠点の名称       |
+   | ------------------ | ------------------- |
+   | canadacentral      | カナダ中部      |
+   | canadaeast         | カナダ東部         |
+   | northcentralus     | 米国北中部    |
+   | centralus          | 米国中部          |
+   | southcentralus     | 米国中南部    |
+   | eastus             | 米国東部             |
+   | eastus2            | 米国東部 2           |
+   | westus             | 米国西部             |
+   | westus2            | 米国西部 2           |
+   | westcentralus      | 米国中西部     |
+   | francecentral      | フランス中部      |
+   | uksouth            | 英国南部            |
+   | ukwest             | 英国西部             |
+   | northeurope        | 北ヨーロッパ        |
+   | westeurope         | 西ヨーロッパ         |
+   | australiaeast      | オーストラリア東部      |
+   | australiasoutheast | オーストラリア南東部 |
+   | brazilsouth        | ブラジル南部        |
+   | centralindia       | インド中部       |
+   | southindia         | インド南部         |
+   | japaneast          | 東日本          |
+   | japanwest          | 西日本          |
+   | koreacentral       | 韓国中部       |
+   | southeastasia      | 東南アジア      |
+   | eastasia           | 東アジア           |
+
+4. [**...**] ボタン、[**Save (保存)**] の順に選択します。
+
+   ![Azure Cloud Shell エディターのウィンドウのスクリーンショットです。ここでは、[...] ボタンが選択されており、[Save (保存)] のオプションが強調表示されています。](media/b4-image62.png)
+
+5. 再度、[**...**] ボタンを選択し、[**Close Editor (エディターを閉じる)**] を選択します。
+
+   ![Azure Cloud Shell エディターのウィンドウのスクリーンショットです。ここでは、[...] ボタンが選択されており、[Close Editor (エディターを閉じる)] のオプションが強調表示されています。](media/b4-image63.png)
+
+6. 以下の命令 (大文字と小文字の区別あり) を入力し、必要なリソースを作成します。{resourceGroup} は前に作成したリソース グループの名前と置き換えます。
+
+   ```bash
+   az group deployment create --resource-group {resourceGroup} --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+   ```
+
+   このコマンドでラボの全リソースを展開する場合、完了するまでに 30 分から 60 分かかります。処理をそのままにして次のタスクに移ります。次は、Azure DevOps を設定します。
+
+### タスク 7: Azure DevOps プロジェクトのセットアップ <a name="タスク-7-azure-devops-プロジェクトのセットアップ"></a>
+
+FabMedical から、スターター ファイルが提供されています。このファイルでは、FabMedical の顧客である Contoso Neuro の Web サイトのコピーを取得し、スピーカーやセッションを提供するコンテンツ API で単一の Node.js から特定の Web サイトへと、このコピーをリファクターしています。リファクターされたこのコードを出発点として、Web サイトのコンテナー化を検証します。Web サイトと API を Docker コンテナーとして実行し、Azure Kubernetes Service 環境内で管理する開発ワークフローを確認しますが、リファクターされたコードによって、この概念実証 (PoC) を簡単に完了できます。
+
+1. **新しい** Azure Cloud Shell コンソールを開きます。
+
+2. FabMedical のソース コード フォルダーに移動し、フォルダーの内容を一覧表示します。
+
+   ```bash
+   cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/developer/
+   ll
+   ```
+
+   > **重要**: 上記の手順の代わりにラボのインフラストラクチャ エディションを利用する場合は、以下のコマンドを入力します。
+   >
+   > ```bash
+   > cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/infrastructure/
+   > ll
+   > ```
+   >
+   > このコマンドを実行すると、このラボのエディションで使用するバージョンのスターター ファイルに移動します。
+
+3. 以下のように、Web サイト用のフォルダー、コンテンツ API 用のフォルダー、API データ初期化用のフォルダーの 3 つが表示されます。
+
+   ```bash
+   content-api/
+   content-init/
+   content-web/
+   ```
+
+4. git がコミットに使用するユーザー名とメール アドレスを設定します。
+
+   ```bash
+   git config --global user.email "you@example.com"
+   git config --global user.name "Your Name"
+   ```
+
+5. git CLI を構成して資格情報をキャッシュします。これで資格情報の再入力が
+   不要になります。
+
+   ```bash
+   git config --global credential.helper cache
+   ```
+
+6. ブラウザーの新しいタブで [Azure DevOps][devops] にアクセスし、
+   アカウントにログインします。
+
+   このアカウントに初めてログインする場合は、以下の手順を実行する必要があります。
+
+   - 連絡先情報を確定し、[Next (次へ)] を選択します。
+   - [Create new account (新規をアカウントを作成)] を選択します。
+   - アカウント名として fabmedical-SUFFIX の 1 つを入力し、[Continue (続行)] を選択します。
+
+7. Azure DevOps プロジェクトを作成します。
+
+   - プロジェクト名として「fabmedical」を入力します。
+   - プロジェクトがプライベートであることを確認します。
+   - [Advanced (詳細)] ドロップダウンを選択します。
+   - [Version control (バージョン管理)] が [Git] に設定されていることを確認します。
+   - [Create (作成)] ボタンを選択します。
+
+   ![プロジェクト作成のダイアログ。[Create (作成)] ボタンが矢印で示されている](media/b4-image51.png)
+
+8. 以下の手順でマルチステージ パイプラインを有効にします。
+
+   - 右上のユーザー アイコンを選択します。
+   - 3 つのドットを選択して、[Preview Features (プレビュー機能)] メニュー アイテムにアクセスします。
+   - マルチステージ パイプラインを [On] に切り替えます。
+
+9. 次に、Azure サービスの接続を、Azure DevOps アカウントに追加します。プロジェクトの設定の歯車アイコンを選択し、設定にアクセスします。次に、[Service connections (サービス接続)] を選択します。
+
+10. [+ New service connection (+ 新しいサービス接続)] を選択します。次に、メニューから [Azure Resource Manager] を選択します。
+
+    ![Azure DevOps のスクリーンショット。ここでは、[+ New service connection (+ 新しいサービス接続)] が選択されており、Azure Resource Manager が強調表示されています。](media/vso-service-connection-settings.png)
+
+11. スクリーンショットの画面の下にあるリンクをクリックし、詳細設定にアクセスします。
+
+    ![[Add an Azure Resource Manager service connection (Azure Resource Manager サービス接続の追加)] ダイアログのスクリーンショット。ここでは、サブスクリプション情報を入力します。](media/vso-service-connection-settings2.png)
+
+12. 前に作成したサービス プリンシパルの情報を使用して、必要な情報を入力します
+    。
+
+    - **接続名**: azurecloud
+    - **環境**: AzureCloud
+    - **スコープ レベル**: Subscription
+    - **サブスクリプション ID**: `az account show` で出力された `ID` を入力。
+    - **サブスクリプション名**: `az account show` で出力された`名前`を入力。
+    - **サービス プリンシパル クライアント ID**: サービス プリンシパルから出力した `AppID` を入力します。
+    - **サービス プリンシパル キー**: サービス プリンシパルから出力した`パスワード`を入力します。
+    - **テナント ID**: サービス プリンシパルから出力した`テナント`を入力します。
+
+    ![[Add an Azure Resource Manager service connection (Azure Resource Manager サービス接続の追加)] ダイアログのスクリーンショット。(media/Ex1-Task7.16.png)
+
+13. [Verify connection (接続の確認)]、[OK] の順に選択します。
+
+    > **注**: 接続の確認ができないときは、再度チェックを行い、必要なデータを再入力します。
+
+14. 次に、別の Azure サービスの接続を、Azure DevOps アカウントに追加します。
+    プロジェクトの設定の歯車アイコンを選択し、設定にアクセスします。次に、
+    [Service connections (サービス接続)] を選択します。
+
+15. [+ New service connection (+ 新しいサービス接続)] を選択します。メニューから [Docker Registry (Docker レジストリ)] を
+    選択します。
+
+    ![[Add a Docker Registry service connection (Docker Registry サービス接続の追加)] ダイアログのスクリーンショット。](media/hol-2019-10-01_20-30-17.png)
+
+16. 前に作成したサービス プリンシパルの情報を使用して、必要な情報を入力します
+    。
+
+    - **環境**: Azure Container Registry
+
+    - **接続名**: Fabmedical ACR
+
+    - **Azure サブスクリプション**: ラボで使用するサブスクリプションを選択します。
+
+    - **Azure Container Registry**: ARM 環境で作成したレジストリを選択します。
+
+    ![[Add a Docker Registry service connection (Docker Registry サービス接続の追加)] ダイアログのスクリーンショット。上記で説明した値が入力されています。](media/hol-2019-10-01_20-33-05.png)
+
+17. [OK] を選択します。
+
+18. 次に、[Repos (リポジトリ)] を選択し、リポジトリのドロップダウンから
+    [+ New repository (+ 新規リポジトリ)] を選択し、新しいリポジトリを作成します。
+
+    ![リポジトリのドロップダウンが表示され、[+ New repository (+ 新規リポジトリ)] アイテムが選択されています。](media/b4-image53.png)
+
+    - リポジトリ名として「content-web」と入力します。
+
+    - Azure DevOps でリポジトリが作成されたら、[Generate Git credentials (Git 資格情報を生成)] を選択します。
+
+    ![[Clone to your computer (コンピューターへのクローンの作成)] セクションが表示され、[Generate Git credentials (Git 資格情報を生成)] ボタンが選択されています。](media/b4-image50.png)
+
+19. 個人用アクセス トークンをコピーし、後で使用できるよう保存します。
+
+20. Cloud Shell ウィンドウで、`content-web` 用の git リポジトリを新たに初期化します。
+
+    ```bash
+    cd content-web
+    git init
+    git add .
+    git commit -m "Initial Commit"
+    ```
+
+21. [Azure DevOps] タブに戻ります。プッシュ用の新規リモートとして Azure DevOps リポジトリを追加するコマンドをコピーします。以下の例のように、「**HTTPS**」用のコマンドをコピーします。
+
+    ```bash
+    git remote add origin https://fabmedical-sol@dev.azure.com/fabmedical-sol/fabmedical/_git/content-web
+    git push -u origin --all
+    ```
+
+22. Azure DevOps からコピーしたコマンドを使用してリモート リポジトリを構成し、Azure DevOps にコードをプッシュします。パスワードの入力を求められたら、このタスクで前にコピーした Azure DevOps の個人用アクセス トークンを貼り付けます。
+
+23. Azure DevOps に戻り、リポジトリのドロップダウンで、「`content-api`」という名前の 2 つ目のリポジトリを作成します。
+
+    > 注: Git 資格情報を再度生成する必要はありません。どちらのリポジトリにも同じ PAT が使用できます。
+
+24. Cloud Shell ウィンドウで、`content-api` ディレクトリの git リポジトリを新たに初期化します。
+
+    ```bash
+    cd ../content-api
+    git init
+    git add .
+    git commit -m "Initial Commit"
+    ```
+
+25. プッシュ用の新規リモートとして `content-api` リポジトリを追加するコマンドをコピーします。「**HTTPS**」用のコマンドをコピーします。
+
+26. Azure DevOps からコピーしたコマンドを使用してリモート リポジトリを構成し、Azure DevOps にコードをプッシュします。パスワードの入力を求められたら、このタスクで前にコピーした Azure DevOps の個人用アクセス トークンを貼り付けます。
+
+27. リポジトリのドロップダウンで、「`content-init`」という名前の 3 つ目のリポジトリを
+    作成します。
+
+    > 注: Git 資格情報を再度生成する必要はありません。どちらのリポジトリにも同じ PAT が使用できます。
+
+28. Cloud Shell ウィンドウで、`content-init` ディレクトリの git リポジトリを新たに初期化します。
+
+    ```bash
+    cd ../content-init
+    git init
+    git add .
+    git commit -m "Initial Commit"
+    ```
+
+29. プッシュ用の新規リモートとして `content-init` リポジトリを追加するコマンドをコピーします。「**HTTPS**」用のコマンドをコピーします。
+
+30. Azure DevOps からコピーしたコマンドを使用してリモート リポジトリを構成し、Azure DevOps にコードをプッシュします。パスワードの入力を求められたら、このタスクで前にコピーした Azure DevOps の個人用アクセス トークンを貼り付けます。
+
+### タスク 8: ビルド エージェントとのセキュアな接続 <a name="タスク-8-ビルド-エージェントとのセキュアな接続"></a>
+
+このセクションでは、新規のビルド エージェント VM との接続を検証します
+。
+
+1. **新たに** Azure Cloud Shell コンソールを起動して以下のコマンドを実行します。
+ARM 環境の実行時にプロビジョニングされたビルド エージェント VM の IP アドレスをこのコマンドで検索します。
+
+   > **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
+
+   ```bash
+   az vm show -d -g fabmedical-[SUFFIX] -n fabmedical-[SHORTssh  SUFFIX] --query publicIps -o tsv
+   ```
+
+   例
+
+   ```bash
+   az vm show -d -g fabmedical-sol -n fabmedical-SOL --query publicIps -o tsv
+   ```
+
+2. この VM のパブリック IP アドレスを Cloud Shell の出力からメモします。
+
+   ![Azure Cloud Shell ウィンドウに、パブリック IP アドレスが表示されています。](media/b4-2019-10-01_11-58-05.png)
+
+3. 以下のコマンドを入力して、新たに作成した VM に接続します。
+
+   ```bash
+    ssh -i [PRIVATEKEYNAME] [BUILDAGENTUSERNAME]@[BUILDAGENTIP]
+   ```
+
+   コマンドのかっこ内の値を以下のように置き換えます。
+
+   - [PRIVATEKEYNAME]: 前に作成した公開キーの名前「.ssh/fabmedical」を使用します。
+
+   - [BUILDAGENTUSERNAME]: VM のユーザー名として「adminfabmedical」を使用します。
+
+   - [BUILDAGENTIP]: 前の手順で抽出したビルド エージェント VM の IP アドレスを入力します。
+
+   ```bash
+   ssh -i .ssh/fabmedical adminfabmedical@52.174.141.11
+   ```
+
+4. 接続の認証を確認できなくても、接続の確認を求められたときは、「yes」と入力します。
+
+5. 前に作成した公開キーのパスフレーズを求められたときは、この値を入力します。
+
+6. SSH が VM と接続し、以下のようなコマンド プロンプトが表示されます。Cloud Shell ウィンドウは次のステップで使用するので、オープンのままにします。
+
+   `adminfabmedical@fabmedical-SUFFIX:~$`
+
+   ![Azure Cloud Shell ウィンドウのこのスクリーンショットでは、ssh -i .ssh/fabmedical adminfabmedical@52.174.141.11 が入力され、コマンド プロンプトで実行されており、ウィンドウには、詳細な情報が表示されていますが、現時点では、まだキャプチャできていない情報があります。この点はこのコースの今後のバージョンで改善する予定です。](media/b4-image27.png)
+
+> **注**: 接続に問題がある場合、ARM テンプレートへの SSH 公開キーの貼り付けが間違っている可能性があります。この場合、VM を再度作成し、もう一度、公開キーを貼り付けなければなりません。
+
+### タスク 9: ビルド エージェントのセットアップの完了 <a name="タスク-9-ビルド-エージェントのセットアップの完了"></a>
+
+このタスクでは、パッケージをアップデートし、Docker エンジンをインストールします。
+
+1. ビルド エージェント VM との SSH 接続が確立している Cloud Shell ウィンドウに移動します。
+
+2. 以下のような単一行のコマンドを入力し、HTTPS 経由にて 1 回で、Ubuntu パッケージのアップデートと、リポジトリに対応する cURL およびサポートのインストールを行います。続行するか確認を求められた場合は、「Y」と入力して、Enter を押します。
+
+   ```bash
+   sudo apt-get update && sudo apt install apt-transport-https ca-certificates curl software-properties-common
+   ```
+
+3. 以下のような単一行のコマンドを入力して、Docker の公式の GPG キーを追加します。
+
+   ```bash
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   ```
+
+4. 以下のような単一行のコマンドを入力して、Docker の信頼できるリポジトリを Ubuntu パッケージのリストに追加します。
+
+   ```bash
+   sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+   ```
+
+5. NodeJS LTS リリースを使用する NodeJs PPA の追加、Ubuntu パッケージのアップグレード、Docker エンジン、node.js、ノード パッケージ マネージャーのインストールを、以下のコマンドを入力して行います。それぞれのコマンドは、1 行ずつ入力します。続行するか確認を求められた場合は、「Y」と入力して、Enter を押します。
+
+   ```bash
+   sudo apt-get install curl python-software-properties
+
+   curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+   sudo apt-get update && sudo apt-get install -y docker-ce nodejs mongodb-clients
+   ```
+
+6. 以下のような単一行のコマンドを入力して、Ubuntu パッケージを最新のバージョンにアップグレードします。続行するか確認を求められた場合は、「Y」と入力して、Enter を押します。
+
+   ```bash
+   sudo apt-get upgrade
+   ```
+
+7. `docker-compose` をインストールします。
+
+   ```bash
+   sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+   sudo chmod +x /usr/local/bin/docker-compose
+   ```
+
+8. コマンドが完了したら、以下のコマンドを実行して、インストールされている Docker のバージョンをチェックします。以下のスクリーンショットのような出力が表示されます。昇格された特権でコマンドを実行していないため、サーバーのバージョンはまだ表示されません。この点に注意してください。なお、詳細については、すぐ後で説明します。
+
+   ```bash
+   docker version
+   ```
+
+   ![Azure Cloud Shell ウィンドウのこのスクリーンショットでは、docker version が入力され、コマンド プロンプトで実行されており、ウィンドウには、Docker のバージョン情報が表示されています。](media/b4-image28.png)
+
+9. node.js や npm のバージョンを確認するだけであれば、以下のコマンドでチェックできます。
+
+   ```bash
+   nodejs --version
+
+   npm -version
+   ```
+
+10. Angular CLI をインストールします。
+
+    ```bash
+    sudo npm install -g @angular/cli
+    ```
+
+11. sudo の使用を不要にするため、ユーザーを Docker グループに追加します。出力に表示されるエラーは無視して構いません。
+
+    ```bash
+    sudo usermod -aG docker $USER
+    ```
+
+    ![Azure Cloud Shell ウィンドウのこのスクリーンショットでは、sudo usermod -aG docker $USER が入力され、コマンド プロンプトで実行されており、ウィンドウには、エラーが表示されています。](media/b4-image29.png)
+
+12. ユーザーの権限の変更を有効にするために、
+    「exit」と入力して Enter キーを押し、SSH セッションを終了します。前のタスクで SSH を使用していたビルド エージェント VM に再度接続します。
+
+13. Docker のバージョンを確認するコマンドを再度実行し、出力された内容をメモします。今度はサーバーのバージョンも表示されます。
+
+    ![Azure Cloud Shell ウィンドウのこのスクリーンショットでは、docker version が入力され、コマンド プロンプトで実行されており、ウィンドウには、サーバーのバージョン情報と Docker のバージョン情報が表示されています。](media/b4-image30.png)
+
+14. 以下に示す複数の Docker のコマンドを実行します。
+
+    - このコマンドでは、現在実行されているコンテナーの有無を確認します。
+
+      ```bash
+      docker container ls
+      ```
+
+    - このコマンドでは、コンテナーの有無を確認します。実行されているか否かは問いません。
+
+      ```bash
+      docker container ls -a
+      ```
+
+15. どちらのコマンドでも空のリストが表示され、エラーは表示されません。Docker エンジンは正常に動作しており、ビルド エージェントの準備が整っています。
+
+    ![Azure Cloud Shell ウィンドウのこのスクリーンショットでは、docker container ls と docker container ls -a のコマンドが入力され、コマンド プロンプトで実行されています。](media/b4-image31.png)
+
+### タスク 10: リポジトリをビルド エージェントに複製 <a name="タスク-10-リポジトリをビルド-エージェントに複製"></a>
+
+このタスクでは、Azure DevOps からリポジトリを複製し、
+ビルド エージェントで使用できるようにします。
+
+1. Azure Cloud Shell で前に行ったように、git コミット用のユーザー名とメール アドレス
+   を設定します。
+
+   ```bash
+   git config --global user.email "you@example.com"
+   git config --global user.name "Your Name"
+   ```
+
+   > **注**: いくつかのケースでは、`ルート` ユーザーには、そのユーザー固有の `.config` フォルダーがあります。この場合、以下のコマンドで所有権を `adminfabmedical` に戻し、再度、`git` コマンドを実行します。
+
+   ```bash
+   sudo chown -R $USER:$(id -gn $USER) /home/adminfabmedical/.config
+   ```
+
+2. git CLI を構成して資格情報をキャッシュします。これで資格情報の再入力が
+   不要になります。
+
+   ```bash
+   git config --global credential.helper cache
+   ```
+
+   > **注**: いくつかのケースでは、`ルート` ユーザーには、そのユーザー固有の `.config` フォルダーがあります。この場合、以下のコマンドで所有権を `adminfabmedical` に戻し、再度、`git` コマンドを実行します。
+
+   ```bash
+   sudo chown -R $USER:$(id -gn $USER) /home/adminfabmedical/.config
+   ```
+
+3. Azure DevOps の `content-web` リポジトリに移動し、右側にある [Clone (複製)] を
+   選択します。
+
+   ![content-web リポジトリのページが表示され、[Clone (複製)] ボタンが選択されています。](media/b4-image55.png)
+
+4. リポジトリの URL をコピーします。
+
+5. リポジトリの URL を使用して、content-web のコードをビルド エージェントのマシンに複製します。
+
+   ```bash
+   git clone <REPOSITORY_URL>
+   ```
+
+   > **注**: いくつかのケースでは、`ルート` ユーザーには、そのユーザー固有の `.config` フォルダーがあります。この場合、以下のコマンドで所有権を `adminfabmedical` に戻し、再度、`git` コマンドを実行します。
+
+   ```bash
+   sudo chown -R $USER:$(id -gn $USER) /home/adminfabmedical/.config
+   ```
+
+6. パスワードの入力を求められたら、前のステップで使用した PTA トークンを入力します。
+
+7. ブラウザーで、`content-api` リポジトリに切り替え、[Clone (複製)] を選択し、リポジトリの URL を確認してコピーします。
+
+8. リポジトリの URL と `git clone` を使用して、content-api のコードをビルド エージェントにコピーします。
+
+9. ブラウザーで、`content-init` リポジトリに切り替え、[Clone (複製)] を選択し、リポジトリの URL を確認してコピーします。
+
+10. リポジトリの URL と `git clone` を使用して、content-init のコードをビルド エージェントにコピーします。
+
+> **注**: ビルド エージェントの SSH 接続として、この Azure Cloud Shell ウィンドウは
+> オープンのままにします。ラボの指示に従い、必要に応じて追加の Azure Cloud Shell セッションを
+> 開きます。
+
+ハンズオン ラボを始める_前_に、リハーサルとしてこのセクションで説明した手順すべてを実際に確認しておくようお勧めします。
+
+[logo]: https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png
+[devops]: https://azure.microsoft.com/ja-jp/services/devops/?nav=min
