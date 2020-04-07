@@ -43,20 +43,19 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
         - [Task1：アプリケーションの動作確認](#task1アプリケーションの動作確認)
         - [Task2：Webアプリケーションの動作確認](#task2webアプリケーションの動作確認)
         - [Task3：Dockerイメージを作成する](#task3dockerイメージを作成する)
-        - [Task 4: Run a containerized application](#task-4-run-a-containerized-application)
         - [Task4：コンテナー化されたアプリケーションを実行する](#task4コンテナー化されたアプリケーションを実行する)
-        - [タスク5：環境変数を設定する](#タスク5環境変数を設定する)
+        - [Task5：環境変数を設定する](#task5環境変数を設定する)
         - [Task6：Docker composeで複数コンテナーを実行する](#task6docker-composeで複数コンテナーを実行する)
         - [Task7：イメージをAzure Container Registryにプッシュする](#task7イメージをazure-container-registryにプッシュする)
         - [Task8：イメージをプッシュするためのCIパイプラインのセットアップ](#task8イメージをプッシュするためのciパイプラインのセットアップ)
     - [演習2：Azure Kubernetes Serviceにソリューションをデプロイする](#演習2azure-kubernetes-serviceにソリューションをデプロイする)
-        - [タスク1：Azure Kubernetes Serviceクラスターにトンネル接続する](#タスク1azure-kubernetes-serviceクラスターにトンネル接続する)
+        - [Task1：Azure Kubernetes Serviceクラスターにトンネル接続する](#task1azure-kubernetes-serviceクラスターにトンネル接続する)
         - [Task2：Kubernetes管理ダッシュボードを使用してサービスをデプロイする](#task2kubernetes管理ダッシュボードを使用してサービスをデプロイする)
-        - [タスク3：kubectlを使用してサービスをデプロイする](#タスク3kubectlを使用してサービスをデプロイする)
+        - [Task3：kubectlを使用してサービスをデプロイする](#task3kubectlを使用してサービスをデプロイする)
         - [Task4：Helmチャートを使用してサービスをデプロイする](#task4helmチャートを使用してサービスをデプロイする)
         - [Task5：Kubernetes JobでCosmos DBを初期化する](#task5kubernetes-jobでcosmos-dbを初期化する)
         - [Task6：ブラウザーでアプリケーションをテストする](#task6ブラウザーでアプリケーションをテストする)
-        - [タスク7：Kubernetesクラスターへの継続的デリバリーを構成する](#タスク7kubernetesクラスターへの継続的デリバリーを構成する)
+        - [Task7：Kubernetesクラスターへの継続的デリバリーを構成する](#task7kubernetesクラスターへの継続的デリバリーを構成する)
         - [Task8：コンテナーのAzure Monitorを確認する](#task8コンテナーのazure-monitorを確認する)
     - [演習3：アプリケーションのスケーリングとHAのテスト](#演習3アプリケーションのスケーリングとhaのテスト)
         - [Task1：Kubernetesダッシュボードからサービスインスタンスを増やす](#task1kubernetesダッシュボードからサービスインスタンスを増やす)
@@ -167,7 +166,7 @@ Fabrikam Medical Conferences（FabMedical）社は、医療コミュニティに
 
    - 試用版のサブスクリプションは使用できません。
 
-   - このラボのセットアップ (「[タスク 5: サービス プリンシパルの作成](#タスク-5-サービス-プリンシパルの作成)」を含む) を完了するには、お使いのアカウントが以下の条件を満たしている必要があります。
+   - このラボのセットアップ (「[Task 5: サービス プリンシパルの作成](#Task-5-サービス-プリンシパルの作成)」を含む) を完了するには、お使いのアカウントが以下の条件を満たしている必要があります。
 
      - 使用するサブスクリプション用に、組み込みの[オーナー (英語)](https://docs.microsoft.com/ja-jp/azure/role-based-access-control/built-in-roles#owner) のロールを保有している。
 
@@ -175,7 +174,7 @@ Fabrikam Medical Conferences（FabMedical）社は、医療コミュニティに
 
      > **注:** これらの要件を満たしていない場合、ポータルにログインしてサービス プリンシパルを作成する作業は、サブスクリプション オーナーの権限を持つ他のメンバー ユーザーに依頼してください。
 
-   - 「[タスク 6: ARM テンプレートの展開](#タスク-6-arm-テンプレートの展開)」でビルド エージェントと Azure Kubernetes Service クラスターを作成できるよう、サブスクリプションには十分な数のコアを用意する必要があります。ラボの指示に正確に従えば、必要なコアの数は 8 つですが、エージェントの数を増やす場合や、VM のサイズを大きくするときには、さらにコアが必要になります。ラボの開始前に必要な手順を実行し、追加コアの要求申請が必要ないか確認しましょう。
+   - 「[Task 6: ARM テンプレートの展開](#Task-6-arm-テンプレートの展開)」でビルド エージェントと Azure Kubernetes Service クラスターを作成できるよう、サブスクリプションには十分な数のコアを用意する必要があります。ラボの指示に正確に従えば、必要なコアの数は 8 つですが、エージェントの数を増やす場合や、VM のサイズを大きくするときには、さらにコアが必要になります。ラボの開始前に必要な手順を実行し、追加コアの要求申請が必要ないか確認しましょう。
 
 2. Azure DevOps のアカウント
 
@@ -475,7 +474,7 @@ Fabrikam Medical Conferences（FabMedical）社は、医療コミュニティに
 
    ![Three images are now visible in this screenshot of the console window: content-web, content-api, and node.](media/image60.png)
 
-### Task 4: Run a containerized application
+<!-- ### Task 4: Run a containerized application -->
 ### Task4：コンテナー化されたアプリケーションを実行する
 
 <!-- The web application container will be calling endpoints exposed by the API application container and the API application container will be communicating with mongodb. In this exercise, you will launch the images you created as containers on the same bridge network you created when starting mongodb. -->
@@ -571,7 +570,7 @@ WebアプリケーションコンテナーはAPIアプリケーションコン�
    ```
 
 <!-- ### Task 5: Setup environment variables -->
-### タスク5：環境変数を設定する
+### Task5：環境変数を設定する
 
 <!-- In this task, you will configure the "web" container to communicate with the API container using an environment variable, similar to the way the mongodb connection string is provided to the api. -->
 このタスクでは、mongodb接続文字列がAPIに提供される方法と同様に、環境変数を使用してAPIコンテナーと通信するようにWebコンテナーを構成します。
@@ -1060,7 +1059,7 @@ WebアプリケーションコンテナーはAPIアプリケーションコン�
 この演習では、ハンズオンラボの前に作成したAzure Kubernetes Serviceクラスターに接続し、Kubernetesを使用してDockerアプリケーションをクラスターにデプロイします。
 
 <!-- ### Task 1: Tunnel into the Azure Kubernetes Service cluster -->
-### タスク1：Azure Kubernetes Serviceクラスターにトンネル接続する
+### Task1：Azure Kubernetes Serviceクラスターにトンネル接続する
 
 <!-- In this task, you will gather the information you need about your Azure Kubernetes Service cluster to connect to the cluster and execute commands to connect to the Kubernetes management dashboard from cloud shell. -->
 このタスクでは、クラスターに接続するためにAzure Kubernetes Serviceクラスターに必要な情報を収集し、Cloud ShellからKubernetes管理ダッシュボードに接続するコマンドを実行します。
@@ -1292,7 +1291,7 @@ WebアプリケーションコンテナーはAPIアプリケーションコン�
     ![A screenshot of the Kubernetes management dashboard showing logs output.](media/Ex2-Task1.19.png)
 
 <!-- ### Task 3: Deploy a service using kubectl -->
-### タスク3：kubectlを使用してサービスをデプロイする
+### Task3：kubectlを使用してサービスをデプロイする
 
 <!-- In this task, deploy the web service using `kubectl`. -->
 このタスクでは、`kubectl`コマンドを使用してWebサービスをデプロイします。
@@ -1618,7 +1617,7 @@ WebアプリケーションコンテナーはAPIアプリケーションコン�
 22. 変更を保存してエディターを閉じます。
 
 <!-- 23. The chart is now setup to run our web container. Type the following command to deploy the application described by the YAML files. You will receive a message indicating that helm has created a web deployment and a web service. -->
-23.これで、helm chartがセットアップされ、Webコンテナーが実行されます。次のコマンドを入力して、YAMLファイルで記述されたアプリケーションをデプロイします。 helmがWebデプロイメントとWebサービスを作成したことを示すメッセージが表示されます。
+23. これで、helm chartがセットアップされ、Webコンテナーが実行されます。次のコマンドを入力して、YAMLファイルで記述されたアプリケーションをデプロイします。 helmがWebデプロイメントとWebサービスを作成したことを示すメッセージが表示されます。
 
     ```bash
     cd ../..
@@ -1739,7 +1738,7 @@ WebアプリケーションコンテナーはAPIアプリケーションコン�
    ![In this screenshot of the Contoso Neuro 2017 web application, Sessions has been selected, and sample session information appears at the bottom.](media/image115.png)
 
 <!-- ### Task 7: Configure Continuous Delivery to the Kubernetes Cluster -->
-### タスク7：Kubernetesクラスターへの継続的デリバリーを構成する
+### Task7：Kubernetesクラスターへの継続的デリバリーを構成する
 
 <!-- In this task, you will use Azure DevOps to automate the process for deploying the web image to the AKS cluster. You will update the DevOps Pipeline and configure a deployment stage so that when new images are pushed to the ACR, the pipeline deploys the image to the AKS cluster. -->
 このタスクでは、Azure DevOpsを使用して、WebイメージをAKSクラスターにデプロイするプロセスを自動化します。新しいイメージがACRにプッシュされたときにパイプラインがAKSクラスターに展開するように、DevOpsパイプラインを更新してデプロイステージを構成します。
@@ -2005,7 +2004,7 @@ WebアプリケーションコンテナーはAPIアプリケーションコン�
 このタスクでは、APIサービスコンテナーのインスタンス数を、クラスターで使用可能なリソースを超えて増やします。 Kubernetesがこの状態を処理する方法を観察し、問題を修正します。
 
 <!-- 1. From the navigation menu, select Deployments. From this view, select the API deployment. -->
-1.ナビゲーションメニューから、[Deployments]を選択します。このビューから、APIデプロイメントを選択します。
+1. ナビゲーションメニューから、[Deployments]を選択します。このビューから、APIデプロイメントを選択します。
 
 <!-- 2. Configure the deployment to use a fixed host port for initial testing. Select Edit. -->
 2. テストで固定ホストポートを使用するように配置を構成します。編集を選択します。
@@ -2074,7 +2073,7 @@ WebアプリケーションコンテナーはAPIアプリケーションコン�
    ![In the Scale a Deployment dialog box, 4 is entered in the Desired number of pods box.](media/image119.png)
 
 <!-- 10. From the navigation menu, select Services view under Discovery and Load Balancing. Select the api service from the Services list. From the api service view, you will see it has two healthy instances and two unhealthy (or possibly pending depending on timing) instances. -->
-10.ナビゲーションメニューの[Discovery and Load Balancing]で[Service]ビューを選択します。 「Service」リストからAPIサービスを選択します。 APIサービスビューから、2つの正常なインスタンスと2つの異常な（またはタイミングによっては保留中の）インスタンスがあることがわかります。
+10. ナビゲーションメニューの[Discovery and Load Balancing]で[Service]ビューを選択します。 「Service」リストからAPIサービスを選択します。 APIサービスビューから、2つの正常なインスタンスと2つの異常な（またはタイミングによっては保留中の）インスタンスがあることがわかります。
 
     ![In the api service view, various information is displayed in the Details box and in the Pods box.](media/image120.png)
 
@@ -2214,8 +2213,8 @@ Kubernetesサービスは各Podに割り当てられたポートを検出でき�
 <!-- In this task, you will update the web service so that it supports dynamic discovery through the Azure load balancer. -->
 このタスクでは、Azureロードバランサーによる動的検出をサポートするようにWebサービスを更新します。
 
-1. From the navigation menu, select Deployments under Workloads. From the view's Deployments list, select the web deployment.
-1.ナビゲーションメニューから、[Workload]の[Deployment]を選択します。ビューの[Deploy]リストから、Webのデプロイメントを選択します。
+<!-- 1. From the navigation menu, select Deployments under Workloads. From the view's Deployments list, select the web deployment. -->
+1. ナビゲーションメニューから、[Workload]の[Deployment]を選択します。ビューの[Deploy]リストから、Webのデプロイメントを選択します。
 
 <!-- 2. Select **Edit**. -->
 2. [**Edit**]を選択します。
@@ -2252,7 +2251,7 @@ APIデプロイメントと同様に、Webデプロイメントは固定の _hos
 2. [**Edit**]を選択します。
 
 <!-- 3. From the Edit a Deployment dialog, find the _cpu_ resource requirements for the web container. Change this value to "125m". -->
-3.「Edit a Deployment」ダイアログから、Webコンテナーの[ _cpu_ resource requirements]を見つけます。この値を「125m」に変更します。
+3. [Edit a Deployment]ダイアログから、Webコンテナーの[ _cpu_ resource requirements]を見つけます。この値を「125m」に変更します。
 
    ![This is a screenshot of the Edit a Deployment dialog box with various displayed information about ports, env, and resources. The resources node, with cpu: 125m selected, is highlighted.](media/image142.png)
 
@@ -2260,7 +2259,7 @@ APIデプロイメントと同様に、Webデプロイメントは固定の _hos
 4. [**Update**]を選択して変更を保存し、デプロイメントを更新します。
 
 <!-- 5. From the navigation menu, select Replica Sets under Workloads. From the view's Replica Sets list select the web replica set. -->
-5.ナビゲーションメニューから、[Workload]の下の[ReplicaSet]を選択します。ビューの[ReplicaSet]リストから、Webレプリカセットを選択します。
+5. ナビゲーションメニューから、[Workload]の下の[ReplicaSet]を選択します。ビューの[ReplicaSet]リストから、Webレプリカセットを選択します。
 
 <!-- 6. When the deployment update completes, four web pods should be shown in running state. -->
 6. デプロイメントの更新が完了すると、4つのPodが実行状態で表示されます。
@@ -2361,14 +2360,14 @@ APIデプロイメントと同様に、Webデプロイメントは固定の _hos
    ```
 
 <!-- 2. Install the ingress controller resource to handle ingress requests as they come in. The ingress controller will receive a public IP of its own on the Azure Load Balancer and be able to handle requests for multiple services over port 80 and 443. -->
-2.イングレスコントローラーリソースをインストールして、入ってくるリクエストを処理します。イングレスコントローラーは、Azureロードバランサーで独自のパブリックIPを受信し、ポート80および443で複数のサービスのリクエストを処理できます。
+2. イングレスコントローラーリソースをインストールして、入ってくるリクエストを処理します。イングレスコントローラーは、Azureロードバランサーで独自のパブリックIPを受信し、ポート80および443で複数のサービスのリクエストを処理できます。
 
    ```bash
    helm install stable/nginx-ingress --namespace kube-system --set controller.replicaCount=2
    ```
 
 <!-- 3. Set a DNS prefix on the IP address allocated to the ingress controller. Visit the `kube-system` namespace in your Kubernetes dashboard to find the IP. Append the following path after the `#!/` marker in the URL: -->
-3.入力コントローラに割り当てられたIPアドレスにDNSプレフィックスを設定します。 Kubernetesダッシュボードの「kube-system」名前空間にアクセスして、IPを見つけます。 URLの `＃!/`の後に次のパスを追加します。
+3. 入力コントローラに割り当てられたIPアドレスにDNSプレフィックスを設定します。 Kubernetesダッシュボードの「kube-system」名前空間にアクセスして、IPを見つけます。 URLの `＃!/`の後に次のパスを追加します。
 
    ```text
    service?namespace=kube-system
