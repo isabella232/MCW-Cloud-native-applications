@@ -974,39 +974,39 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
    - **KubernetesServicePrincipalClientId**: Kubernetes クラスター サービスのプリンシパル クライアント ID を入力します。前のステップで使ったサービス プリンシパルの「AppID」を使用します。
    - **KubernetesServicePrincipalClientSecret**: Kubernetes クラスター サービスのプリンシパル クライアント シークレットを入力します。前のステップで使ったサービス プリンシパルの「パスワード」を使用します。
    - **KubernetesServicePrincipalObjectId**: Kubernetes クラスター サービスのプリンシパル オブジェクト ID を入力します。前のステップで使ったサービス プリンシパルの「objectId」を使用します。
-   - **CosmosLocation**: Azure Cosmos DB のプライマリ拠点を入力します。前に作成したリソース グループと同じ拠点を使用します。(例: `「eastus」`)。
-   - **CosmosLocationName**: Azure Cosmos DB のプライマリ拠点の名称を入力します。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「米国東部」`)。
-   - **CosmosPairedLocation**: Azure Cosmos DB のセカンダリ拠点を入力します。以下のリストの拠点を使用します。(例: `「westus」`)。
-   - **CosmosPairedLocationName**: Azure Cosmos DB のセカンダリ拠点の名称を入力します。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「米国西部」`)。
+   - **CosmosLocation**: Azure Cosmos DB のプライマリ拠点を入力します。前に作成したリソース グループと同じ拠点を使用します。(例: `「japaneast」`)。
+   - **CosmosLocationName**: Azure Cosmos DB のプライマリ拠点の名称を入力します。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「Japan East」`)。
+   - **CosmosPairedLocation**: Azure Cosmos DB のセカンダリ拠点を入力します。以下のリストの拠点を使用します。(例: `「japanwest」`)。
+   - **CosmosPairedLocationName**: Azure Cosmos DB のセカンダリ拠点の名称を入力します。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「Japan West」`)。
    
 
-   | 拠点           | 拠点の名称       |
+   | Location (拠点)    | Location Name (拠点の名称) |
    | ------------------ | ------------------- |
-   | canadacentral      | カナダ中部      |
-   | canadaeast         | カナダ東部         |
-   | northcentralus     | 米国北中部    |
-   | centralus          | 米国中部          |
-   | southcentralus     | 米国中南部    |
-   | eastus             | 米国東部             |
-   | eastus2            | 米国東部 2           |
-   | westus             | 米国西部             |
-   | westus2            | 米国西部 2           |
-   | westcentralus      | 米国中西部     |
-   | francecentral      | フランス中部      |
-   | uksouth            | 英国南部            |
-   | ukwest             | 英国西部             |
-   | northeurope        | 北ヨーロッパ        |
-   | westeurope         | 西ヨーロッパ         |
-   | australiaeast      | オーストラリア東部      |
-   | australiasoutheast | オーストラリア南東部 |
-   | brazilsouth        | ブラジル南部        |
-   | centralindia       | インド中部       |
-   | southindia         | インド南部         |
-   | japaneast          | 東日本          |
-   | japanwest          | 西日本          |
-   | koreacentral       | 韓国中部       |
-   | southeastasia      | 東南アジア      |
-   | eastasia           | 東アジア           |
+   | canadacentral      | Canada Central      |
+   | canadaeast         | Canada East         |
+   | northcentralus     | North Central US    |
+   | centralus          | Central US          |
+   | southcentralus     | South Central US    |
+   | eastus             | East US             |
+   | eastus2            | East US 2           |
+   | westus             | West US             |
+   | westus2            | West US 2           |
+   | westcentralus      | West Central US     |
+   | francecentral      | France Central      |
+   | uksouth            | UK South            |
+   | ukwest             | UK West             |
+   | northeurope        | North Europe        |
+   | westeurope         | West Europe         |
+   | australiaeast      | Australia East      |
+   | australiasoutheast | Australia Southeast |
+   | brazilsouth        | Brazil South        |
+   | centralindia       | Central India       |
+   | southindia         | South India         |
+   | japaneast          | Japan East          |
+   | japanwest          | Japan West          |
+   | koreacentral       | Korea Central       |
+   | southeastasia      | Southeast Asia      |
+   | eastasia           | East Asia           |
 
 4. [**...**] ボタン、[**Save (保存)**] の順に選択します。
 
