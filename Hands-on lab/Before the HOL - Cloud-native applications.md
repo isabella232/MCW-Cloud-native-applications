@@ -1115,7 +1115,7 @@ FabMedical から、スターター ファイルが提供されています。�
     - **サービス プリンシパル キー**: サービス プリンシパルから出力した`パスワード`を入力します。
     - **テナント ID**: サービス プリンシパルから出力した`テナント`を入力します。
 
-    ![[Add an Azure Resource Manager service connection (Azure Resource Manager サービス接続の追加)] ダイアログのスクリーンショット。(media/Ex1-Task7.16.png)
+    ![Add an Azure Resource Manager service connection (Azure Resource Manager サービス接続の追加) ダイアログのスクリーンショット。](media/Ex1-Task7.16.png)
 
 13. [Verify connection (接続の確認)]、[OK] の順に選択します。
 
