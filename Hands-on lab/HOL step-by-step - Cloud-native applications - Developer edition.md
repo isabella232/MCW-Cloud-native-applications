@@ -2791,7 +2791,7 @@ Fabrikam Medical Conferences (FabMedical) は、医療コミュニティに特�
    RUN npm install
 
    # アプリ ソースのバンドル
-   COPY ./usr/src/app
+   COPY . /usr/src/app
 
    FROM base AS final
    WORKDIR /usr/src/app
