@@ -3236,7 +3236,7 @@ Web アプリケーション コンテナーは、API アプリケーション �
 4. ビルド VM に接続された Azure Cloud Shell セッションで、以下のコマンドを入力し、ACR アカウントにログインします。指示に従い、ログインを完了します。
 
    ```bash
-   UpdateServiceAccount.exe -M Service -U domain\username -P password
+   docker login [LOGINSERVER] -u [USERNAME] -p [PASSWORD]
    ```
 
    例
