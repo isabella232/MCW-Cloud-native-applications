@@ -3079,7 +3079,7 @@ YAML を使用して定義します。
 
 9. [Review your pipeline YAML (パイプライン YAML を確認する)] ステップで、`containerRegistryName` の値を編集し、`[SHORT_SUFFIX]` は、コンテナーのレジストリの名前と一致するよう、固有の 3 文字のサフィックスに置き換えます。
 
-   ![Review your pipeline YAML (パイプライン YAML を確認する)] ステップのスクリーンショット。containerRegistryName プロパティが枠で囲われています。](media/hol-2019-10-18_06-32-34.png)
+   ![Review your pipeline YAML (パイプライン YAML を確認する) ステップのスクリーンショット。containerRegistryName プロパティが枠で囲われています。](media/hol-2019-10-18_06-32-34.png)
 
 10. 編集が完了したら、[`Run (実行)`] を選択してパイプラインを実行します。
 
