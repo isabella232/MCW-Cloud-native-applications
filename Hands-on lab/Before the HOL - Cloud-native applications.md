@@ -25,7 +25,7 @@ The names of manufacturers, products, or URLs are provided for informational pur
 -->
 
 <!-- TOC -->
-
+<!--
 - [Cloud-native applications before the hands-on lab setup guide](#cloud-native-applications-before-the-hands-on-lab-setup-guide)
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
@@ -39,20 +39,7 @@ The names of manufacturers, products, or URLs are provided for informational pur
         - [Task 8: Connect securely to the build agent](#task-8-connect-securely-to-the-build-agent)
         - [Task 9: Complete the build agent setup](#task-9-complete-the-build-agent-setup)
         - [Task 10: Clone Repositories to the Build Agent](#task-10-clone-repositories-to-the-build-agent)
-- [クラウド ネイティブのアプリケーションに関するハンズオン ラボの事前セットアップ ガイド <a name="クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド"></a>](#クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド-a-nameクラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイドa)
-    - [前提条件 <a name="前提条件"></a>](#前提条件-a-name前提条件a)
-    - [ハンズオン ラボを始める前に <a name="ハンズオン-ラボを始める前に"></a>](#ハンズオン-ラボを始める前に-a-nameハンズオン-ラボを始める前にa)
-        - [タスク 1: Azure Cloud Shell のセットアップ <a name="タスク-1-azure-cloud-shell-のセットアップ"></a>](#タスク-1-azure-cloud-shell-のセットアップ-a-nameタスク-1-azure-cloud-shell-のセットアップa)
-        - [タスク 2: スターター ファイルのダウンロード <a name="タスク-2-スターター-ファイルのダウンロード"></a>](#タスク-2-スターター-ファイルのダウンロード-a-nameタスク-2-スターター-ファイルのダウンロードa)
-        - [タスク 3: リソース グループ <a name="タスク-3-リソース-グループ"></a>](#タスク-3-リソース-グループ-a-nameタスク-3-リソース-グループa)
-        - [タスク 4: SSH キーの作成 <a name="タスク-4-ssh-キーの作成"></a>](#タスク-4-ssh-キーの作成-a-nameタスク-4-ssh-キーの作成a)
-        - [タスク 5: サービス プリンシパルの作成 <a name="タスク-5-サービス-プリンシパルの作成"></a>](#タスク-5-サービス-プリンシパルの作成-a-nameタスク-5-サービス-プリンシパルの作成a)
-        - [タスク 6: ARM テンプレートの展開 <a name="タスク-6-arm-テンプレートの展開"></a>](#タスク-6-arm-テンプレートの展開-a-nameタスク-6-arm-テンプレートの展開a)
-        - [タスク 7: Azure DevOps プロジェクトのセットアップ <a name="タスク-7-azure-devops-プロジェクトのセットアップ"></a>](#タスク-7-azure-devops-プロジェクトのセットアップ-a-nameタスク-7-azure-devops-プロジェクトのセットアップa)
-        - [タスク 8: ビルド エージェントとのセキュアな接続 <a name="タスク-8-ビルド-エージェントとのセキュアな接続"></a>](#タスク-8-ビルド-エージェントとのセキュアな接続-a-nameタスク-8-ビルド-エージェントとのセキュアな接続a)
-        - [タスク 9: ビルド エージェントのセットアップの完了 <a name="タスク-9-ビルド-エージェントのセットアップの完了"></a>](#タスク-9-ビルド-エージェントのセットアップの完了-a-nameタスク-9-ビルド-エージェントのセットアップの完了a)
-        - [タスク 10: リポジトリをビルド エージェントに複製 <a name="タスク-10-リポジトリをビルド-エージェントに複製"></a>](#タスク-10-リポジトリをビルド-エージェントに複製-a-nameタスク-10-リポジトリをビルド-エージェントに複製a)
-
+-->
 <!-- /TOC -->
 <!--
 # Cloud-native applications before the hands-on lab setup guide
@@ -875,7 +862,7 @@ Azure リソース グループを作成し、このハンズオン ラボで作
    例
 
    ```bash
-   az group create -l westus -n fabmedical-sol
+   az group create -l eastus -n fabmedical-sol
    ```
 
 2. 作業が完了すると、Azure ポータルにリソース グループが表示されます。
@@ -974,10 +961,10 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
    - **KubernetesServicePrincipalClientId**: Kubernetes クラスター サービスのプリンシパル クライアント ID を入力します。前のステップで使ったサービス プリンシパルの「AppID」を使用します。
    - **KubernetesServicePrincipalClientSecret**: Kubernetes クラスター サービスのプリンシパル クライアント シークレットを入力します。前のステップで使ったサービス プリンシパルの「パスワード」を使用します。
    - **KubernetesServicePrincipalObjectId**: Kubernetes クラスター サービスのプリンシパル オブジェクト ID を入力します。前のステップで使ったサービス プリンシパルの「objectId」を使用します。
-   - **CosmosLocation**: Azure Cosmos DB のプライマリ拠点を入力します。前に作成したリソース グループと同じ拠点を使用します。(例: `「japaneast」`)。
-   - **CosmosLocationName**: Azure Cosmos DB のプライマリ拠点の名称を入力します。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「Japan East」`)。
-   - **CosmosPairedLocation**: Azure Cosmos DB のセカンダリ拠点を入力します。以下のリストの拠点を使用します。(例: `「japanwest」`)。
-   - **CosmosPairedLocationName**: Azure Cosmos DB のセカンダリ拠点の名称を入力します。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「Japan West」`)。
+   - **CosmosLocation**: Azure Cosmos DB のプライマリ拠点を入力します。前に作成したリソース グループと同じ拠点を使用します。(例: `「eastus」`)。
+   - **CosmosLocationName**: Azure Cosmos DB のプライマリ拠点の名称を入力します。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「East US」`)。
+   - **CosmosPairedLocation**: Azure Cosmos DB のセカンダリ拠点を入力します。以下のリストの拠点を使用します。(例: `「westus」`)。
+   - **CosmosPairedLocationName**: Azure Cosmos DB のセカンダリ拠点の名称を入力します。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「West US」`)。
    
 
    | Location (拠点)    | Location Name (拠点の名称) |
@@ -1095,13 +1082,13 @@ FabMedical から、スターター ファイルが提供されています。�
 
 9. 次に、Azure サービスの接続を、Azure DevOps アカウントに追加します。プロジェクトの設定の歯車アイコンを選択し、設定にアクセスします。次に、[Service connections (サービス接続)] を選択します。
 
-10. [+ New service connection (+ 新しいサービス接続)] を選択します。次に、メニューから [Azure Resource Manager] を選択します。
+10. [Create service connection (+ サービス接続を作成)] を選択します。次に、メニューから [Azure Resource Manager] を選択します。
 
-    ![Azure DevOps のスクリーンショット。ここでは、[+ New service connection (+ 新しいサービス接続)] が選択されており、Azure Resource Manager が強調表示されています。](media/vso-service-connection-settings.png)
+    ![Azure DevOps のスクリーンショット。ここでは、[Create service connection (+ サービス接続を作成)] が選択されており、Azure Resource Manager が強調表示されています。](media/vso-service-connection-settings-202004.png)
 
-11. スクリーンショットの画面の下にあるリンクをクリックし、詳細設定にアクセスします。
+11. [Service principal (manual)] を選択し、詳細設定にアクセスします。
 
-    ![[Add an Azure Resource Manager service connection (Azure Resource Manager サービス接続の追加)] ダイアログのスクリーンショット。ここでは、サブスクリプション情報を入力します。](media/vso-service-connection-settings2.png)
+    ![[Add an Azure Resource Manager service connection (Azure Resource Manager サービス接続の追加)] ダイアログのスクリーンショット。ここでは、サブスクリプション情報を入力します。](media/vso-service-connection-settings2-202004.png)
 
 12. 前に作成したサービス プリンシパルの情報を使用して、必要な情報を入力します
     。
@@ -1152,7 +1139,7 @@ FabMedical から、スターター ファイルが提供されています。�
 
     - リポジトリ名として「content-web」と入力します。
 
-    - Azure DevOps でリポジトリが作成されたら、[Generate Git credentials (Git 資格情報を生成)] を選択します。
+    - Azure DevOps でリポジトリが作成されたら、[Clone] ボタンをクリックして、[Generate Git credentials (Git 資格情報を生成)] を選択します。
 
     ![[Clone to your computer (コンピューターへのクローンの作成)] セクションが表示され、[Generate Git credentials (Git 資格情報を生成)] ボタンが選択されています。](media/b4-image50.png)
 
@@ -1167,7 +1154,8 @@ FabMedical から、スターター ファイルが提供されています。�
     git commit -m "Initial Commit"
     ```
 
-21. [Azure DevOps] タブに戻ります。プッシュ用の新規リモートとして Azure DevOps リポジトリを追加するコマンドをコピーします。以下の例のように、「**HTTPS**」用のコマンドをコピーします。
+21. [Azure DevOps] タブに戻ります。  
+[Clone] ボタンをクリックして、プッシュ用の新規リモートとして Azure DevOps リポジトリを追加するコマンドをコピーします。以下の例のように、「**HTTPS**」用のコマンドをコピーします。
 
     ```bash
     git remote add origin https://fabmedical-sol@dev.azure.com/fabmedical-sol/fabmedical/_git/content-web
@@ -1243,11 +1231,11 @@ ARM 環境の実行時にプロビジョニングされたビルド エージェ
 
    コマンドのかっこ内の値を以下のように置き換えます。
 
-   - [PRIVATEKEYNAME]: 前に作成した公開キーの名前「.ssh/fabmedical」を使用します。
+   - [PRIVATEKEYNAME] : 前に作成した公開キーの名前「.ssh/fabmedical」を使用します。
 
-   - [BUILDAGENTUSERNAME]: VM のユーザー名として「adminfabmedical」を使用します。
+   - [BUILDAGENTUSERNAME] : VM のユーザー名として「adminfabmedical」を使用します。
 
-   - [BUILDAGENTIP]: 前の手順で抽出したビルド エージェント VM の IP アドレスを入力します。
+   - [BUILDAGENTIP] : 前の手順で抽出したビルド エージェント VM の IP アドレスを入力します。
 
    ```bash
    ssh -i .ssh/fabmedical adminfabmedical@52.174.141.11
