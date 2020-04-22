@@ -1008,6 +1008,8 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
 このセクションでは、ARM テンプレートを構成して実行し、演習全体で必要になるすべてのリソースを作成します。
 
+![ARM](media/arm.png)
+
 1. Azure Cloud Shell で、以下のように、ARM テンプレートのディレクトリへ切り替えを行います。
 
    > **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
@@ -1024,19 +1026,22 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
    ![このスクリーンショットには、Azure Cloud Shell のオンライン エディターが表示されています。](media/b4-image581.png)
 
-3. 環境に合わせて各種のキーの値を更新します。
+3. ご自身の環境に合わせて各種パラメータのキーの値を更新します。
 
-   - **Suffix**: 最大 3 文字で、短縮形の SUFFIX (サフィックス) を入力します。
-   - **VirtualMachineAdminUsernameLinux**: Linux ビルド エージェント VM 管理者のユーザー名 (例: `「adminfabmedical」`) を入力します。
-   - **VirtualMachineAdminPublicKeyLinux**: Linux ビルド エージェント VM 管理者の SSH 公開キーを入力します。この値は、前に作成した `.ssh/fabmedical.pub` ファイルにあります (例: `「ssh-rsa AAAAB3N(...)vPiybQV admin@fabmedical」`)。
-   - **KubernetesServicePrincipalClientId**: Kubernetes クラスター サービスのプリンシパル クライアント ID を入力します。前のステップで使ったサービス プリンシパルの「AppID」を使用します。
-   - **KubernetesServicePrincipalClientSecret**: Kubernetes クラスター サービスのプリンシパル クライアント シークレットを入力します。前のステップで使ったサービス プリンシパルの「パスワード」を使用します。
-   - **KubernetesServicePrincipalObjectId**: Kubernetes クラスター サービスのプリンシパル オブジェクト ID を入力します。前のステップで使ったサービス プリンシパルの「objectId」を使用します。
-   - **CosmosLocation**: Azure Cosmos DB のプライマリ拠点を入力します。前に作成したリソース グループと同じ拠点を使用します。(例: `「eastus」`)。
-   - **CosmosLocationName**: Azure Cosmos DB のプライマリ拠点の名称を入力します。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「East US」`)。
-   - **CosmosPairedLocation**: Azure Cosmos DB のセカンダリ拠点を入力します。以下のリストの拠点を使用します。(例: `「westus」`)。
-   - **CosmosPairedLocationName**: Azure Cosmos DB のセカンダリ拠点の名称を入力します。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「West US」`)。
+   |                   設定値                   |                                                                                        説明                                                                                        |
+   | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | **Suffix**                                 | 最大 3 文字で、短縮形の SUFFIX (サフィックス) を入力                                                                                                                               |
+   | **VirtualMachineAdminUsernameLinux**       | Linux ビルド エージェント VM 管理者のユーザー名 (例: `「adminfabmedical」`) を入力                                                                                                 |
+   | **VirtualMachineAdminPublicKeyLinux**      | Linux ビルド エージェント VM 管理者の SSH 公開キーを入力。この値は、前に作成した `.ssh/fabmedical.pub` ファイルにあります (例: `「ssh-rsa AAAAB3N(...)vPiybQV admin@fabmedical」`) |
+   | **KubernetesServicePrincipalClientId**     | Kubernetes クラスター サービスのプリンシパル クライアント ID を入力。前のステップで使ったサービス プリンシパルの「appID」を使用します                                              |
+   | **KubernetesServicePrincipalClientSecret** | Kubernetes クラスター サービスのプリンシパル クライアント シークレットを入力。前のステップで使ったサービス プリンシパルの「password」を使用します                                |
+   | **KubernetesServicePrincipalObjectId**     | Kubernetes クラスター サービスのプリンシパル オブジェクト ID を入力。前のステップで使ったサービス プリンシパルの「objectId」を使用します。                                         |
+   | **CosmosLocation**                         | Azure Cosmos DB のプライマリ拠点。前に作成したリソース グループと同じ拠点を使用します。(例: `「eastus」`)。                                                                        |
+   | **CosmosLocationName**                     | Azure Cosmos DB のプライマリ拠点の名称。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「East US」`)。                                                           |
+   | **CosmosPairedLocation**                   | Azure Cosmos DB のセカンダリ拠点。以下のリストの拠点を使用します。(例: `「westus」`)。                                                                                             |
+   | **CosmosPairedLocationName**               | Azure Cosmos DB のセカンダリ拠点の名称。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「West US」`)。                                  |
    
+   ここでCosmoDBの設定可能な拠点は以下の通りです。
 
    | Location (拠点)    | Location Name (拠点の名称) |
    | ------------------ | ------------------- |
@@ -1074,7 +1079,7 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
    ![Azure Cloud Shell エディターのウィンドウのスクリーンショットです。ここでは、[...] ボタンが選択されており、[Close Editor (エディターを閉じる)] のオプションが強調表示されています。](media/b4-image63.png)
 
-6. 以下の命令 (大文字と小文字の区別あり) を入力し、必要なリソースを作成します。{resourceGroup} は前に作成したリソース グループの名前と置き換えます。
+6. 以下の命令 (大文字と小文字の区別あり) を入力し、必要なリソースを作成します。{resourceGroup} はタスク3で作成したリソース グループの名前と置き換えます。
 
    ```bash
    az group deployment create --resource-group {resourceGroup} --template-file azuredeploy.json --parameters azuredeploy.parameters.json
