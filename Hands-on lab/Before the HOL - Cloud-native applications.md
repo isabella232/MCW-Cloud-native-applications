@@ -22,10 +22,8 @@ The names of manufacturers, products, or URLs are provided for informational pur
 © 2020 Microsoft Corporation. All rights reserved.
 
 **Contents**
--->
+   
 
-<!-- TOC -->
-<!--
 - [Cloud-native applications before the hands-on lab setup guide](#cloud-native-applications-before-the-hands-on-lab-setup-guide)
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
@@ -39,9 +37,8 @@ The names of manufacturers, products, or URLs are provided for informational pur
         - [Task 8: Connect securely to the build agent](#task-8-connect-securely-to-the-build-agent)
         - [Task 9: Complete the build agent setup](#task-9-complete-the-build-agent-setup)
         - [Task 10: Clone Repositories to the Build Agent](#task-10-clone-repositories-to-the-build-agent)
--->
-<!-- /TOC -->
-<!--
+
+
 # Cloud-native applications before the hands-on lab setup guide
 
 ## Requirements
@@ -740,20 +737,19 @@ You should follow all steps provided _before_ performing the Hands-on lab.
 **このドキュメントの内容**
 
 <!-- TOC -->
-
-- [クラウド ネイティブのアプリケーションに関するハンズオン ラボの事前セットアップ ガイド](#クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド)
-  - [前提条件](#前提条件)
-  - [ハンズオン ラボを始める前に](#ハンズオン-ラボを始める前に)
-    - [タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)
-    - [タスク 2: スターター ファイルのダウンロード](#タスク-2-スターター-ファイルのダウンロード)
-    - [タスク 3: リソース グループ](#タスク-3-リソース-グループ)
-    - [タスク 4: SSH キーの作成](#タスク-4-ssh-キーの作成)
-    - [タスク 5: サービス プリンシパルの作成](#タスク-5-サービス-プリンシパルの作成)
-    - [タスク 6: ARM テンプレートの展開](#タスク-6-arm-テンプレートの展開)
-    - [タスク 7: Azure DevOps プロジェクトのセットアップ](#タスク-7-azure-devops-プロジェクトのセットアップ)
-    - [タスク 8: ビルド エージェントとのセキュアな接続](#タスク-8-ビルド-エージェントとのセキュアな接続)
-    - [タスク 9: ビルド エージェントのセットアップの完了](#タスク-9-ビルド-エージェントのセットアップの完了)
-    - [タスク 10: リポジトリをビルド エージェントに複製](#タスク-10-リポジトリをビルド-エージェントに複製)
+- [クラウド ネイティブのアプリケーションに関するハンズオン ラボの事前セットアップ ガイド <a name="クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド"></a>](#クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド-a-nameクラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイドa)
+    - [前提条件 <a name="前提条件"></a>](#前提条件-a-name前提条件a)
+    - [ハンズオン ラボを始める前に <a name="ハンズオン-ラボを始める前に"></a>](#ハンズオン-ラボを始める前に-a-nameハンズオン-ラボを始める前にa)
+        - [タスク 1: Azure Cloud Shell のセットアップ <a name="タスク-1-azure-cloud-shell-のセットアップ"></a>](#タスク-1-azure-cloud-shell-のセットアップ-a-nameタスク-1-azure-cloud-shell-のセットアップa)
+        - [タスク 2: スターター ファイルのダウンロード <a name="タスク-2-スターター-ファイルのダウンロード"></a>](#タスク-2-スターター-ファイルのダウンロード-a-nameタスク-2-スターター-ファイルのダウンロードa)
+        - [タスク 3: リソース グループ <a name="タスク-3-リソース-グループ"></a>](#タスク-3-リソース-グループ-a-nameタスク-3-リソース-グループa)
+        - [タスク 4: SSH キーの作成 <a name="タスク-4-ssh-キーの作成"></a>](#タスク-4-ssh-キーの作成-a-nameタスク-4-ssh-キーの作成a)
+        - [タスク 5: サービス プリンシパルの作成 <a name="タスク-5-サービス-プリンシパルの作成"></a>](#タスク-5-サービス-プリンシパルの作成-a-nameタスク-5-サービス-プリンシパルの作成a)
+        - [タスク 6: ARM テンプレートの展開 <a name="タスク-6-arm-テンプレートの展開"></a>](#タスク-6-arm-テンプレートの展開-a-nameタスク-6-arm-テンプレートの展開a)
+        - [タスク 7: Azure DevOps プロジェクトのセットアップ <a name="タスク-7-azure-devops-プロジェクトのセットアップ"></a>](#タスク-7-azure-devops-プロジェクトのセットアップ-a-nameタスク-7-azure-devops-プロジェクトのセットアップa)
+        - [タスク 8: ビルド エージェントとのセキュアな接続 <a name="タスク-8-ビルド-エージェントとのセキュアな接続"></a>](#タスク-8-ビルド-エージェントとのセキュアな接続-a-nameタスク-8-ビルド-エージェントとのセキュアな接続a)
+        - [タスク 9: ビルド エージェントのセットアップの完了 <a name="タスク-9-ビルド-エージェントのセットアップの完了"></a>](#タスク-9-ビルド-エージェントのセットアップの完了-a-nameタスク-9-ビルド-エージェントのセットアップの完了a)
+        - [タスク 10: リポジトリをビルド エージェントに複製 <a name="タスク-10-リポジトリをビルド-エージェントに複製"></a>](#タスク-10-リポジトリをビルド-エージェントに複製-a-nameタスク-10-リポジトリをビルド-エージェントに複製a)
 
 <!-- /TOC -->
 
@@ -843,6 +839,10 @@ You should follow all steps provided _before_ performing the Hands-on lab.
    rm -rf MCW-Cloud-native-applications/.git
    ```
 
+4. これにより、今回のハンズオンで使用するFabrikam Medical 社イベント情報を提供するシステムのサンプルのコードが、開発環境として利用するAzure Cloud Shell 上にダウンロードできました。
+
+   ![sample](media/Ex1-Task6.24.png)
+
 ### タスク 3: リソース グループ <a name="タスク-3-リソース-グループ"></a>
 
 Azure リソース グループを作成し、このハンズオン ラボで作成するリソースの大部分を格納します。これによって、後のクリーンアップの作業が容易になります。
@@ -857,9 +857,39 @@ Azure リソース グループを作成し、このハンズオン ラボで作
 
    - **SUFFIX (サフィックス):** このラボでは全体を通じ、サフィックスは、メール アドレスのプレフィックスや姓名、イニシャルなどのリソースを一意のものとして扱う場合に使用します。
 
-   - **LOCATION (ロケーション):** すべての Azure Container Registry SKU を利用できるようにする必要のある地域を選択します。現在利用可能な地域は次のとおりです。カナダ中部、カナダ東部、米国北中部、米国中部、米国中南部、米国東部、米国東部 2、米国西部、米国西部 2、米国中西部、フランス中部、英国南部、英国西部、北ヨーロッパ、西ヨーロッパ、オーストラリア東部、オーストラリア南東部、ブラジル南部、インド中部、インド南部、東日本、西日本、韓国中部、東南アジア、東アジア。Azure で作成したリソースをすべて同じ地域に配置するうえで、この情報を後のステップで使用します。そのため、この情報を忘れないようにしてください。
+   - **LOCATION (ロケーション):** すべての Azure Container Registry SKU を利用できるようにする必要のある地域を選択します。現在利用可能な地域は次のとおりです。
 
-   例
+   | Location (拠点)    | Location Name (拠点の名称) |
+   | ------------------ | ------------------- |
+   | canadacentral      | Canada Central      |
+   | canadaeast         | Canada East         |
+   | northcentralus     | North Central US    |
+   | centralus          | Central US          |
+   | southcentralus     | South Central US    |
+   | eastus             | East US             |
+   | eastus2            | East US 2           |
+   | westus             | West US             |
+   | westus2            | West US 2           |
+   | westcentralus      | West Central US     |
+   | francecentral      | France Central      |
+   | uksouth            | UK South            |
+   | ukwest             | UK West             |
+   | northeurope        | North Europe        |
+   | westeurope         | West Europe         |
+   | australiaeast      | Australia East      |
+   | australiasoutheast | Australia Southeast |
+   | brazilsouth        | Brazil South        |
+   | centralindia       | Central India       |
+   | southindia         | South India         |
+   | japaneast          | Japan East          |
+   | japanwest          | Japan West          |
+   | koreacentral       | Korea Central       |
+   | southeastasia      | Southeast Asia      |
+   | eastasia           | East Asia           |
+
+     Azure で作成したリソースをすべて同じ地域に配置するうえで、この情報を後のステップで使用します。そのため、この情報を忘れないようにしてください。
+
+   次のコマンド例は、「米国東部にあるeastusリージョンに fabmedical-solという名前のリソースグループを作成する」するもです。**solの部分は各自で任意の値に変更**してください。
 
    ```bash
    az group create -l eastus -n fabmedical-sol
@@ -889,7 +919,7 @@ Azure リソース グループを作成し、このハンズオン ラボで作
 
 3. 生成したキーをファイルに保存するよう求められたときは、ファイル名として「`.ssh/fabmedical`」と入力します。
 
-4. 画面の指示に従い、パスフレーズを入力します。**入力したパスフレーズは忘れないようにしてください。**
+4. 画面の指示に従い、パスフレーズを入力します。**入力したパスフレーズは忘れないようにしてください。** 
 
 5. 「.ssh/fabmedical」と入力したので、ssh-keygen は、ユーザー フォルダーの「.ssh」フォルダーにファイルを生成します。既定では、Cloud Shell はこのフォルダーを開きます。
 
@@ -911,22 +941,46 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
 > **注**: このタスクを完了するためには、お使いのアカウントが、使用するサブスクリプションに対応したロールの組み込まれた[オーナー (英語)](https://docs.microsoft.com/ja-jp/azure/role-based-access-control/built-in-roles#owner) であり、使用する Azure AD テナントの[メンバー (英語)](https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/users-default-permissions#member-and-guest-users) ユーザーであることを確認します。以下の要件を満たしていないと、サービス プリンシパルの作成時にトラブルが発生する可能性があります。
 
-1. サービス プリンシパルを作成するには、Cloud Shell のコマンド ラインで以下のコマンドを入力します。{id} はお使いのサブスクリプション ID と置き換えます。サフィックスは、名前を一意のものとして扱うために選択したサフィックスと置き換えます。
+1. 次のコマンドを実行してご自身のサブスクリプション ID を確認します。
+   ```bash
+    az account show
+    {
+      "environmentName": "xxxxx",
+      "homeTenantId": "xxxxxxx-xxxx-xxxx-xxxx-xxxx"
+      "id": "12345678-9876-5432-1111-987654321"
+      "isDefault": true,
+    },
+   ```
+   このコマンド結果でidの部分が、ご自身のサブスクリプション ID となります。
+
+   サービス プリンシパルを作成するには、Cloud Shell のコマンド ラインで以下のコマンドを入力します。{id} はお使いのサブスクリプション ID と置き換えます。サフィックスは、名前を一意のものとして扱うために選択したサフィックスと置き換えます。
 
    > **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
 
    ```bash
    az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/{id}" --name="http://Fabmedical-sp-{SUFFIX}"
    ```
+   たとえば、サービスプリンシパル IDが「12345678-9876-5432-1111-987654321」、SUFFIXを「sol」の場合、次のようなコマンドになります。この2つの値はご自身の環境によって異なりますので、読み替えてください。
+
+   ```bash
+   az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/12345678-9876-5432-1111-987654321" --name="http://Fabmedical-sp-sol"
+   ```
+
 
 2. コマンドにより、以下のような出力が生成されます。この情報は後でユーザーにコピーします。
 
    ![Bash ウィンドウのこのスクリーンショットでは、az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/{id}" --name="Fabmedical-sp-SUFFIX" が入力され、コマンド プロンプトで実行されており、ウィンドウには、サービス プリンシパルの情報が表示されていますが、現時点では、まだキャプチャできていない情報があります。この点はこのコースの今後のバージョンで改善する予定です。](media/b4-image39.png)
 
-3. サービス プリンシパルのオブジェクト ID を取得するには、以下のコマンドを入力します。{appId} は、お使いのサービス プリンシパルの AppID と置き換えます。
+3. サービス プリンシパルのオブジェクト ID を取得するには、以下のコマンドを入力します。{appId} は、手順2 で作成したサービスプリンシパルの AppID と置き換えます。
 
    ```bash
    az ad sp show --id {appId} --query "{objectId:@.objectId}"
+   ```
+
+   たとえば、手順2でサービスプリンシパルのAppIDが「"appId": "abcd1234-5678-efjk-9876-54321abc"」と出力された場合、次のようになります。
+
+   ```bash
+   az ad sp show --id abcd1234-5678-efjk-9876-54321abc --query "{objectId:@.objectId}"
    ```
 
 4. コマンドにより、以下のような出力が生成されます。この情報は後でユーザーにコピーします。
@@ -936,6 +990,8 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 ### タスク 6: ARM テンプレートの展開 <a name="タスク-6-arm-テンプレートの展開"></a>
 
 このセクションでは、ARM テンプレートを構成して実行し、演習全体で必要になるすべてのリソースを作成します。
+
+![ARM](media/arm.png)
 
 1. Azure Cloud Shell で、以下のように、ARM テンプレートのディレクトリへ切り替えを行います。
 
@@ -953,19 +1009,22 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
    ![このスクリーンショットには、Azure Cloud Shell のオンライン エディターが表示されています。](media/b4-image581.png)
 
-3. 環境に合わせて各種のキーの値を更新します。
+3. ご自身の環境に合わせて各種パラメータのキーの値を更新します。
 
-   - **Suffix**: 最大 3 文字で、短縮形の SUFFIX (サフィックス) を入力します。
-   - **VirtualMachineAdminUsernameLinux**: Linux ビルド エージェント VM 管理者のユーザー名 (例: `「adminfabmedical」`) を入力します。
-   - **VirtualMachineAdminPublicKeyLinux**: Linux ビルド エージェント VM 管理者の SSH 公開キーを入力します。この値は、前に作成した `.ssh/fabmedical.pub` ファイルにあります (例: `「ssh-rsa AAAAB3N(...)vPiybQV admin@fabmedical」`)。
-   - **KubernetesServicePrincipalClientId**: Kubernetes クラスター サービスのプリンシパル クライアント ID を入力します。前のステップで使ったサービス プリンシパルの「AppID」を使用します。
-   - **KubernetesServicePrincipalClientSecret**: Kubernetes クラスター サービスのプリンシパル クライアント シークレットを入力します。前のステップで使ったサービス プリンシパルの「パスワード」を使用します。
-   - **KubernetesServicePrincipalObjectId**: Kubernetes クラスター サービスのプリンシパル オブジェクト ID を入力します。前のステップで使ったサービス プリンシパルの「objectId」を使用します。
-   - **CosmosLocation**: Azure Cosmos DB のプライマリ拠点を入力します。前に作成したリソース グループと同じ拠点を使用します。(例: `「eastus」`)。
-   - **CosmosLocationName**: Azure Cosmos DB のプライマリ拠点の名称を入力します。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「East US」`)。
-   - **CosmosPairedLocation**: Azure Cosmos DB のセカンダリ拠点を入力します。以下のリストの拠点を使用します。(例: `「westus」`)。
-   - **CosmosPairedLocationName**: Azure Cosmos DB のセカンダリ拠点の名称を入力します。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「West US」`)。
+   |                   設定値                   |                                                                                        説明                                                                                        |
+   | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | **Suffix**                                 | 最大 3 文字で、短縮形の SUFFIX (サフィックス) を入力                                                                                                                               |
+   | **VirtualMachineAdminUsernameLinux**       | Linux ビルド エージェント VM 管理者のユーザー名 (例: `「adminfabmedical」`) を入力                                                                                                 |
+   | **VirtualMachineAdminPublicKeyLinux**      | Linux ビルド エージェント VM 管理者の SSH 公開キーを入力。この値は、前に作成した `.ssh/fabmedical.pub` ファイルにあります (例: `「ssh-rsa AAAAB3N(...)vPiybQV admin@fabmedical」`) |
+   | **KubernetesServicePrincipalClientId**     | Kubernetes クラスター サービスのプリンシパル クライアント ID を入力。前のステップで使ったサービス プリンシパルの「appID」を使用します                                              |
+   | **KubernetesServicePrincipalClientSecret** | Kubernetes クラスター サービスのプリンシパル クライアント シークレットを入力。前のステップで使ったサービス プリンシパルの「password」を使用します                                |
+   | **KubernetesServicePrincipalObjectId**     | Kubernetes クラスター サービスのプリンシパル オブジェクト ID を入力。前のステップで使ったサービス プリンシパルの「objectId」を使用します。                                         |
+   | **CosmosLocation**                         | Azure Cosmos DB のプライマリ拠点。前に作成したリソース グループと同じ拠点を使用します。(例: `「eastus」`)。                                                                        |
+   | **CosmosLocationName**                     | Azure Cosmos DB のプライマリ拠点の名称。前に作成したリソース グループと同じ拠点の名称を使用します。(例: `「East US」`)。                                                           |
+   | **CosmosPairedLocation**                   | Azure Cosmos DB のセカンダリ拠点。以下のリストの拠点を使用します。(例: `「westus」`)。                                                                                             |
+   | **CosmosPairedLocationName**               | Azure Cosmos DB のセカンダリ拠点の名称。前のキーに定義したセカンダリ拠点に合致する拠点の名称を、以下のリストから選択します。(例: `「West US」`)。                                  |
    
+   ここでCosmoDBの設定可能な拠点は以下の通りです。
 
    | Location (拠点)    | Location Name (拠点の名称) |
    | ------------------ | ------------------- |
@@ -1003,7 +1062,7 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
    ![Azure Cloud Shell エディターのウィンドウのスクリーンショットです。ここでは、[...] ボタンが選択されており、[Close Editor (エディターを閉じる)] のオプションが強調表示されています。](media/b4-image63.png)
 
-6. 以下の命令 (大文字と小文字の区別あり) を入力し、必要なリソースを作成します。{resourceGroup} は前に作成したリソース グループの名前と置き換えます。
+6. 以下の命令 (大文字と小文字の区別あり) を入力し、必要なリソースを作成します。{resourceGroup} はタスク3で作成したリソース グループの名前と置き換えます。
 
    ```bash
    az group deployment create --resource-group {resourceGroup} --template-file azuredeploy.json --parameters azuredeploy.parameters.json
@@ -1014,6 +1073,9 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 ### タスク 7: Azure DevOps プロジェクトのセットアップ <a name="タスク-7-azure-devops-プロジェクトのセットアップ"></a>
 
 FabMedical から、スターター ファイルが提供されています。このファイルでは、FabMedical の顧客である Contoso Neuro の Web サイトのコピーを取得し、スピーカーやセッションを提供するコンテンツ API で単一の Node.js から特定の Web サイトへと、このコピーをリファクターしています。リファクターされたこのコードを出発点として、Web サイトのコンテナー化を検証します。Web サイトと API を Docker コンテナーとして実行し、Azure Kubernetes Service 環境内で管理する開発ワークフローを確認しますが、リファクターされたコードによって、この概念実証 (PoC) を簡単に完了できます。
+
+
+![azuredevops](media/azuredevops.png)
 
 1. **新しい** Azure Cloud Shell コンソールを開きます。
 
@@ -1203,6 +1265,12 @@ FabMedical から、スターター ファイルが提供されています。�
 
 このセクションでは、新規のビルド エージェント VM との接続を検証します
 。
+
+このワークショップではアプリのコンテナ化や動作確認などをAzure VMを使ったビルドマシンで行います。ここでは、このビルドマシンへの接続とセットアップを行います。
+
+![buildvm](media/buildvm.png)
+
+
 
 1. **新たに** Azure Cloud Shell コンソールを起動して以下のコマンドを実行します。
 ARM 環境の実行時にプロビジョニングされたビルド エージェント VM の IP アドレスをこのコマンドで検索します。
