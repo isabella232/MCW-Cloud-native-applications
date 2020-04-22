@@ -874,9 +874,39 @@ Azure リソース グループを作成し、このハンズオン ラボで作
 
    - **SUFFIX (サフィックス):** このラボでは全体を通じ、サフィックスは、メール アドレスのプレフィックスや姓名、イニシャルなどのリソースを一意のものとして扱う場合に使用します。
 
-   - **LOCATION (ロケーション):** すべての Azure Container Registry SKU を利用できるようにする必要のある地域を選択します。現在利用可能な地域は次のとおりです。カナダ中部、カナダ東部、米国北中部、米国中部、米国中南部、米国東部、米国東部 2、米国西部、米国西部 2、米国中西部、フランス中部、英国南部、英国西部、北ヨーロッパ、西ヨーロッパ、オーストラリア東部、オーストラリア南東部、ブラジル南部、インド中部、インド南部、東日本、西日本、韓国中部、東南アジア、東アジア。Azure で作成したリソースをすべて同じ地域に配置するうえで、この情報を後のステップで使用します。そのため、この情報を忘れないようにしてください。
+   - **LOCATION (ロケーション):** すべての Azure Container Registry SKU を利用できるようにする必要のある地域を選択します。現在利用可能な地域は次のとおりです。
 
-   例
+   | Location (拠点)    | Location Name (拠点の名称) |
+   | ------------------ | ------------------- |
+   | canadacentral      | Canada Central      |
+   | canadaeast         | Canada East         |
+   | northcentralus     | North Central US    |
+   | centralus          | Central US          |
+   | southcentralus     | South Central US    |
+   | eastus             | East US             |
+   | eastus2            | East US 2           |
+   | westus             | West US             |
+   | westus2            | West US 2           |
+   | westcentralus      | West Central US     |
+   | francecentral      | France Central      |
+   | uksouth            | UK South            |
+   | ukwest             | UK West             |
+   | northeurope        | North Europe        |
+   | westeurope         | West Europe         |
+   | australiaeast      | Australia East      |
+   | australiasoutheast | Australia Southeast |
+   | brazilsouth        | Brazil South        |
+   | centralindia       | Central India       |
+   | southindia         | South India         |
+   | japaneast          | Japan East          |
+   | japanwest          | Japan West          |
+   | koreacentral       | Korea Central       |
+   | southeastasia      | Southeast Asia      |
+   | eastasia           | East Asia           |
+
+     Azure で作成したリソースをすべて同じ地域に配置するうえで、この情報を後のステップで使用します。そのため、この情報を忘れないようにしてください。
+
+   次のコマンド例は、「米国東部にあるeastusリージョンに fabmedical-solという名前のリソースグループを作成する」するもです。**solの部分は各自で任意の値に変更**してください。
 
    ```bash
    az group create -l eastus -n fabmedical-sol
