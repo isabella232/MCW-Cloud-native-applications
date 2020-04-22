@@ -1091,6 +1091,9 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
 FabMedical から、スターター ファイルが提供されています。このファイルでは、FabMedical の顧客である Contoso Neuro の Web サイトのコピーを取得し、スピーカーやセッションを提供するコンテンツ API で単一の Node.js から特定の Web サイトへと、このコピーをリファクターしています。リファクターされたこのコードを出発点として、Web サイトのコンテナー化を検証します。Web サイトと API を Docker コンテナーとして実行し、Azure Kubernetes Service 環境内で管理する開発ワークフローを確認しますが、リファクターされたコードによって、この概念実証 (PoC) を簡単に完了できます。
 
+
+![azuredevops](media/azuredevops.png)
+
 1. **新しい** Azure Cloud Shell コンソールを開きます。
 
 2. FabMedical のソース コード フォルダーに移動し、フォルダーの内容を一覧表示します。
