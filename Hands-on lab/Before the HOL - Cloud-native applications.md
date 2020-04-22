@@ -936,7 +936,7 @@ Azure リソース グループを作成し、このハンズオン ラボで作
 
 3. 生成したキーをファイルに保存するよう求められたときは、ファイル名として「`.ssh/fabmedical`」と入力します。
 
-4. 画面の指示に従い、パスフレーズを入力します。**入力したパスフレーズは忘れないようにしてください。**
+4. 画面の指示に従い、パスフレーズを入力します。**入力したパスフレーズは忘れないようにしてください。** 
 
 5. 「.ssh/fabmedical」と入力したので、ssh-keygen は、ユーザー フォルダーの「.ssh」フォルダーにファイルを生成します。既定では、Cloud Shell はこのフォルダーを開きます。
 
@@ -958,22 +958,46 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
 > **注**: このタスクを完了するためには、お使いのアカウントが、使用するサブスクリプションに対応したロールの組み込まれた[オーナー (英語)](https://docs.microsoft.com/ja-jp/azure/role-based-access-control/built-in-roles#owner) であり、使用する Azure AD テナントの[メンバー (英語)](https://docs.microsoft.com/ja-jp/azure/active-directory/fundamentals/users-default-permissions#member-and-guest-users) ユーザーであることを確認します。以下の要件を満たしていないと、サービス プリンシパルの作成時にトラブルが発生する可能性があります。
 
-1. サービス プリンシパルを作成するには、Cloud Shell のコマンド ラインで以下のコマンドを入力します。{id} はお使いのサブスクリプション ID と置き換えます。サフィックスは、名前を一意のものとして扱うために選択したサフィックスと置き換えます。
+1. 次のコマンドを実行してご自身のサブスクリプション ID を確認します。
+   ```bash
+    az account show
+    {
+      "environmentName": "xxxxx",
+      "homeTenantId": "xxxxxxx-xxxx-xxxx-xxxx-xxxx"
+      "id": "12345678-9876-5432-1111-987654321"
+      "isDefault": true,
+    },
+   ```
+   このコマンド結果でidの部分が、ご自身のサブスクリプション ID となります。
+
+   サービス プリンシパルを作成するには、Cloud Shell のコマンド ラインで以下のコマンドを入力します。{id} はお使いのサブスクリプション ID と置き換えます。サフィックスは、名前を一意のものとして扱うために選択したサフィックスと置き換えます。
 
    > **注**: Azure Cloud Shell が利用できない場合は、「[タスク 1: Azure Cloud Shell のセットアップ](#タスク-1-azure-cloud-shell-のセットアップ)」の項目に戻ります。
 
    ```bash
    az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/{id}" --name="http://Fabmedical-sp-{SUFFIX}"
    ```
+   たとえば、サービスプリンシパル IDが「12345678-9876-5432-1111-987654321」、SUFFIXを「sol」の場合、次のようなコマンドになります。この2つの値はご自身の環境によって異なりますので、読み替えてください。
+
+   ```bash
+   az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/12345678-9876-5432-1111-987654321" --name="http://Fabmedical-sp-sol"
+   ```
+
 
 2. コマンドにより、以下のような出力が生成されます。この情報は後でユーザーにコピーします。
 
    ![Bash ウィンドウのこのスクリーンショットでは、az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/{id}" --name="Fabmedical-sp-SUFFIX" が入力され、コマンド プロンプトで実行されており、ウィンドウには、サービス プリンシパルの情報が表示されていますが、現時点では、まだキャプチャできていない情報があります。この点はこのコースの今後のバージョンで改善する予定です。](media/b4-image39.png)
 
-3. サービス プリンシパルのオブジェクト ID を取得するには、以下のコマンドを入力します。{appId} は、お使いのサービス プリンシパルの AppID と置き換えます。
+3. サービス プリンシパルのオブジェクト ID を取得するには、以下のコマンドを入力します。{appId} は、手順2 で作成したサービスプリンシパルの AppID と置き換えます。
 
    ```bash
    az ad sp show --id {appId} --query "{objectId:@.objectId}"
+   ```
+
+   たとえば、手順2でサービスプリンシパルのAppIDが「"appId": "abcd1234-5678-efjk-9876-54321abc"」と出力された場合、次のようになります。
+
+   ```bash
+   az ad sp show --id abcd1234-5678-efjk-9876-54321abc --query "{objectId:@.objectId}"
    ```
 
 4. コマンドにより、以下のような出力が生成されます。この情報は後でユーザーにコピーします。
