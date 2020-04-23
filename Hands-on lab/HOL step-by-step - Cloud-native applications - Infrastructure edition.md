@@ -27,7 +27,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 -->
 
 <!-- TOC -->
-
+<!--
 - [Cloud-native applications - Infrastructure edition hands-on lab step-by-step](#cloud-native-applications---infrastructure-edition-hands-on-lab-step-by-step)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
@@ -62,41 +62,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
         - [Task 4: Perform a rolling update](#task-4-perform-a-rolling-update)
         - [Task 5: Configure Kubernetes Ingress](#task-5-configure-kubernetes-ingress)
     - [After the hands-on lab](#after-the-hands-on-lab)
-- [クラウド ネイティブのアプリケーション - Infrastructure Edition に関するステップバイステップ式ハンズオン ラボ　<a name="クラウド-ネイティブのアプリケーション---infrastructure-edition-に関するステップバイステップ式ハンズオン-ラボ"></a>](#クラウド-ネイティブのアプリケーション---infrastructure-edition-に関するステップバイステップ式ハンズオン-ラボ　a-nameクラウド-ネイティブのアプリケーション---infrastructure-edition-に関するステップバイステップ式ハンズオン-ラボa)
-    - [要約と学習目標 <a name="要約と学習目標"></a>](#要約と学習目標-a-name要約と学習目標a)
-    - [概要 <a name="概要"></a>](#概要-a-name概要a)
-    - [ソリューションのアーキテクチャ <a name="ソリューションのアーキテクチャ"></a>](#ソリューションのアーキテクチャ-a-nameソリューションのアーキテクチャa)
-    - [前提条件 <a name="前提条件"></a>](#前提条件-a-name前提条件a)
-    - [演習 1: Docker アプリケーションの作成と実行 <a name="演習-1-docker-アプリケーションの作成と実行"></a>](#演習-1-docker-アプリケーションの作成と実行-a-name演習-1-docker-アプリケーションの作成と実行a)
-        - [タスク 1: アプリケーションのテスト <a name="タスク-1-アプリケーションのテスト"></a>](#タスク-1-アプリケーションのテスト-a-nameタスク-1-アプリケーションのテストa)
-        - [タスク 2: Web アプリケーションのブラウジング <a name="タスク-2-web-アプリケーションのブラウジング"></a>](#タスク-2-web-アプリケーションのブラウジング-a-nameタスク-2-web-アプリケーションのブラウジングa)
-        - [タスク 3: Docker イメージの作成 <a name="タスク-3-docker-イメージの作成"></a>](#タスク-3-docker-イメージの作成-a-nameタスク-3-docker-イメージの作成a)
-        - [タスク 4: コンテナー化されたアプリケーションの実行 <a name="タスク-4-コンテナー化されたアプリケーションの実行"></a>](#タスク-4-コンテナー化されたアプリケーションの実行-a-nameタスク-4-コンテナー化されたアプリケーションの実行a)
-        - [タスク 5: 環境変数のセットアップ <a name="タスク-5-環境変数のセットアップ"></a>](#タスク-5-環境変数のセットアップ-a-nameタスク-5-環境変数のセットアップa)
-        - [タスク 6: Docker Compose での複数のコンテナーの実行 <a name="タスク-6-docker-compose-での複数のコンテナーの実行"></a>](#タスク-6-docker-compose-での複数のコンテナーの実行-a-nameタスク-6-docker-compose-での複数のコンテナーの実行a)
-        - [タスク 7: Azure Container Registry へのイメージのプッシュ <a name="タスク-7-azure-container-registry-へのイメージのプッシュ"></a>](#タスク-7-azure-container-registry-へのイメージのプッシュ-a-nameタスク-7-azure-container-registry-へのイメージのプッシュa)
-        - [タスク 8: CI パイプラインをセットアップしてイメージをプッシュ <a name="タスク-8-ci-パイプラインをセットアップしてイメージをプッシュ"></a>](#タスク-8-ci-パイプラインをセットアップしてイメージをプッシュ-a-nameタスク-8-ci-パイプラインをセットアップしてイメージをプッシュa)
-    - [演習 2: Azure Kubernetes Service へのソリューションの展開 <a name="演習-2-azure-kubernetes-service-へのソリューションの展開"></a>](#演習-2-azure-kubernetes-service-へのソリューションの展開-a-name演習-2-azure-kubernetes-service-へのソリューションの展開a)
-        - [タスク 1: Azure Kubernetes Service クラスターへのトンネリング <a name="タスク-1-azure-kubernetes-service-クラスターへのトンネリング"></a>](#タスク-1-azure-kubernetes-service-クラスターへのトンネリング-a-nameタスク-1-azure-kubernetes-service-クラスターへのトンネリングa)
-        - [タスク 2: Kubernetes 管理ダッシュボードでのサービスの展開 <a name="タスク-2-kubernetes-管理ダッシュボードでのサービスの展開"></a>](#タスク-2-kubernetes-管理ダッシュボードでのサービスの展開-a-nameタスク-2-kubernetes-管理ダッシュボードでのサービスの展開a)
-        - [タスク 3: kubectl でのサービスの展開 <a name="タスク-3-kubectl-でのサービスの展開"></a>](#タスク-3-kubectl-でのサービスの展開-a-nameタスク-3-kubectl-でのサービスの展開a)
-        - [タスク 4: Helm チャートでのサービスの展開 <a name="タスク-4-helm-チャートでのサービスの展開"></a>](#タスク-4-helm-チャートでのサービスの展開-a-nameタスク-4-helm-チャートでのサービスの展開a)
-        - [タスク 5: Kubernetes Job でのデータベースの初期化 <a name="タスク-5-kubernetes-job-でのデータベースの初期化"></a>](#タスク-5-kubernetes-job-でのデータベースの初期化-a-nameタスク-5-kubernetes-job-でのデータベースの初期化a)
-        - [タスク 6: ブラウザーでのアプリケーションのテスト <a name="タスク-6-ブラウザーでのアプリケーションのテスト"></a>](#タスク-6-ブラウザーでのアプリケーションのテスト-a-nameタスク-6-ブラウザーでのアプリケーションのテストa)
-        - [タスク 7: Kubernetes のクラスターへの継続的な配信の構成 <a name="タスク-7-kubernetes-のクラスターへの継続的な配信の構成"></a>](#タスク-7-kubernetes-のクラスターへの継続的な配信の構成-a-nameタスク-7-kubernetes-のクラスターへの継続的な配信の構成a)
-        - [タスク 8: Azure Monitor for Containers の確認 <a name="タスク-8-azure-monitor-for-containers-の確認"></a>](#タスク-8-azure-monitor-for-containers-の確認-a-nameタスク-8-azure-monitor-for-containers-の確認a)
-    - [演習 3: アプリケーションのスケーリングと HA のテスト <a name="演習-3-アプリケーションのスケーリングと-ha-のテスト"></a>](#演習-3-アプリケーションのスケーリングと-ha-のテスト-a-name演習-3-アプリケーションのスケーリングと-ha-のテストa)
-        - [タスク 1: Kubernetes ダッシュボードでサービス インスタンスの数を増やす <a name="タスク-1-kubernetes-ダッシュボードでサービス-インスタンスの数を増やす"></a>](#タスク-1-kubernetes-ダッシュボードでサービス-インスタンスの数を増やす-a-nameタスク-1-kubernetes-ダッシュボードでサービス-インスタンスの数を増やすa)
-        - [タスク 2: 利用できるリソースの枠を超えてサービス インスタンスの数を増やす <a name="タスク-2-利用できるリソースの枠を超えてサービス-インスタンスの数を増やす"></a>](#タスク-2-利用できるリソースの枠を超えてサービス-インスタンスの数を増やす-a-nameタスク-2-利用できるリソースの枠を超えてサービス-インスタンスの数を増やすa)
-        - [タスク 3: コンテナーの再起動と HA のテスト <a name="タスク-3-コンテナーの再起動と-ha-のテスト"></a>](#タスク-3-コンテナーの再起動と-ha-のテスト-a-nameタスク-3-コンテナーの再起動と-ha-のテストa)
-    - [演習 4: 各種サービスでの作業とアプリケーション トラフィックのルーティング <a name="演習-4-各種サービスでの作業とアプリケーション-トラフィックのルーティング"></a>](#演習-4-各種サービスでの作業とアプリケーション-トラフィックのルーティング-a-name演習-4-各種サービスでの作業とアプリケーション-トラフィックのルーティングa)
-        - [タスク 1: ポートの制約を受けずにサービスをスケーリング <a name="タスク-1-ポートの制約を受けずにサービスをスケーリング"></a>](#タスク-1-ポートの制約を受けずにサービスをスケーリング-a-nameタスク-1-ポートの制約を受けずにサービスをスケーリングa)
-        - [タスク 2: 外部サービスをアップデートして、ロード バランサーでの動的な検出を実現 <a name="タスク-2-外部サービスをアップデートして、ロード-バランサーでの動的な検出を実現"></a>](#タスク-2-外部サービスをアップデートしてロード-バランサーでの動的な検出を実現-a-nameタスク-2-外部サービスをアップデートしてロード-バランサーでの動的な検出を実現a)
-        - [タスク 3: CPU 制限の調整によるスケーリングの向上 <a name="タスク-3-cpu-制限の調整によるスケーリングの向上"></a>](#タスク-3-cpu-制限の調整によるスケーリングの向上-a-nameタスク-3-cpu-制限の調整によるスケーリングの向上a)
-        - [タスク 4: ローリング アップデートの実行 <a name="タスク-4-ローリング-アップデートの実行"></a>](#タスク-4-ローリング-アップデートの実行-a-nameタスク-4-ローリング-アップデートの実行a)
-        - [タスク 5: Kubernetes イングレスの構成 <a name="タスク-5-kubernetes-イングレスの構成"></a>](#タスク-5-kubernetes-イングレスの構成-a-nameタスク-5-kubernetes-イングレスの構成a)
-    - [ハンズオン ラボの後に <a name="ハンズオン-ラボの後に"></a>](#ハンズオン-ラボの後に-a-nameハンズオン-ラボの後にa)
-
+-->
 <!-- /TOC -->
 <!--
 # Cloud-native applications - Infrastructure edition hands-on lab step-by-step
@@ -2612,7 +2578,7 @@ Fabrikam Medical Conferences (FabMedical) は、医療コミュニティに特�
    docker image ls
    ```
 
-   ![コンソール ウィンドウのこのスクリーンショットには、content-web、content-api、およびノードの 3 つのイメージが表示されています。](media/Ex1-image60.png)
+   ![コンソール ウィンドウのこのスクリーンショットには、content-web、content-api、およびノードの 3 つのイメージが表示されています。](media/Ex1-Task1.7.png)
 
 ### タスク 4: コンテナー化されたアプリケーションの実行 <a name="タスク-4-コンテナー化されたアプリケーションの実行"></a>
 
@@ -3181,7 +3147,7 @@ YAML を使用して定義します。
 
 6. トンネルが正常に作成されると、Kubernetes 管理ダッシュボードが表示されます。
 
-   ![Kubernetes 管理ダッシュボードのスクリーンショット。画面左の [Overview (概要)] が強調表示されており、画面右では、[kubernetes] の横に緑のチェック マークが表示されています。その下の [Secrets (シークレット)] には、default-token-s6kmc が表示されています。
+   ![Kubernetes 管理ダッシュボードのスクリーンショット。画面左の "Overview (概要)" が強調表示されており、画面右では、"kubernetes" の横に緑のチェック マークが表示されています。その下の "Secrets (シークレット)" には、default-token-s6kmc が表示されています。](media/image77.png)
 
    > **注**: トンネルの処理に失敗し、JSON の出力が表示されない場合は、以下のコマンドを実行し、タスク 5 に戻ります。
    >
@@ -3475,7 +3441,7 @@ YAML を使用して定義します。
 6. Azure DevOps から最新の変更を取得してスターター ファイルを更新します。
 
     ```bash
-    cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/developer/content-web
+    cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/infrastructure/content-web
     git pull
     ```
 
@@ -4142,7 +4108,7 @@ API デプロイメントと同様に Web デプロイメントでは、固定�
 2. Azure DevOps から最新の変更を取得してスターター ファイルを更新します。
 
    ```bash
-   cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/developer/content-web
+   cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/infrastructure/content-web
    git pull
    ```
 
@@ -4158,7 +4124,7 @@ API デプロイメントと同様に Web デプロイメントでは、固定�
    code app.js
    ```
 
-5. `express` がインスタンス化されたらすぐに、以下の行を追加します。
+5. `express` がインスタンス化されたらすぐに、以下の行を追加します。 `[YOUR APPINSIGHTS KEY]` は 1 で取得した値で置き換えてください。
 
    ```javascript
    const appInsights = require("applicationinsights");
@@ -4197,11 +4163,19 @@ API デプロイメントと同様に Web デプロイメントでは、固定�
 1. helm パッケージの一覧を更新します。
 
    ```bash
+   helm repo add stable https://kubernetes-charts.storage.googleapis.com/
    helm repo update
    ```
+   see also for helm 2: https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-helm
 
 2. 受信したイングレス リクエストを処理する、イングレス コントローラーのリソースをインストールします。イングレス コントローラーは、Azure Load Balancer の独自のパブリック IP を受け取り、ポート 80 とポート 443 で複数のサービスに対するリクエストを処理できます。
 
+   helm 3 の場合 
+   ```bash
+   helm install my-nginx-ingress stable/nginx-ingress --namespace kube-system --set controller.replicaCount=2
+   ```
+
+   Info: helm 2 の場合 (https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-helm)
    ```bash
    helm install stable/nginx-ingress --namespace kube-system --set controller.replicaCount=2
    ```
@@ -4354,7 +4328,7 @@ API デプロイメントと同様に Web デプロイメントでは、固定�
     kubectl create --save-config=true -f certificate.yml
     ```
 
-    > **注**: 証明書の発行の状態を確認するには、`kubectl で証明書の tls-secret コマンドを記述`し、以下のような _Events_ 出力を探します。
+    > **注**: 証明書の発行の状態を確認するには、`kubectl describe certificate tls-secret` コマンドを使い、以下のような _Events_ 出力を探します。
     >
     > ```text
     > Type    Reason         Age   From          Message
