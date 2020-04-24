@@ -26,9 +26,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 **Contents**
 -->
 
-<!-- TOC -->
-<!--
-- [Cloud-native applications - Infrastructure edition hands-on lab step-by-step](#cloud-native-applications---infrastructure-edition-hands-on-lab-step-by-step)
+<!-- - [Cloud-native applications - Infrastructure edition hands-on lab step-by-step](#cloud-native-applications---infrastructure-edition-hands-on-lab-step-by-step)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
     - [Solution architecture](#solution-architecture)
@@ -61,10 +59,8 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
         - [Task 3: Adjust CPU constraints to improve scale](#task-3-adjust-cpu-constraints-to-improve-scale)
         - [Task 4: Perform a rolling update](#task-4-perform-a-rolling-update)
         - [Task 5: Configure Kubernetes Ingress](#task-5-configure-kubernetes-ingress)
-    - [After the hands-on lab](#after-the-hands-on-lab)
--->
-<!-- /TOC -->
-<!--
+    - [After the hands-on lab](#after-the-hands-on-lab) 
+
 # Cloud-native applications - Infrastructure edition hands-on lab step-by-step
 
 ## Abstract and learning objectives
@@ -2578,7 +2574,7 @@ Fabrikam Medical Conferences (FabMedical) は、医療コミュニティに特�
    docker image ls
    ```
 
-   ![コンソール ウィンドウのこのスクリーンショットには、content-web、content-api、およびノードの 3 つのイメージが表示されています。](media/Ex1-Task1.7.png)
+   ![コンソール ウィンドウのこのスクリーンショットには、content-web、content-api、およびノードの 3 つのイメージが表示されています。](media/image60.png)
 
 ### タスク 4: コンテナー化されたアプリケーションの実行 <a name="タスク-4-コンテナー化されたアプリケーションの実行"></a>
 
