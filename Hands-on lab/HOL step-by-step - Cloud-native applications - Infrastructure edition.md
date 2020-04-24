@@ -3143,7 +3143,7 @@ YAML を使用して定義します。
 
 6. トンネルが正常に作成されると、Kubernetes 管理ダッシュボードが表示されます。
 
-   ![Kubernetes 管理ダッシュボードのスクリーンショット。画面左の [Overview (概要)] が強調表示されており、画面右では、[kubernetes] の横に緑のチェック マークが表示されています。その下の [Secrets (シークレット)] には、default-token-s6kmc が表示されています。
+   ![Kubernetes 管理ダッシュボードのスクリーンショット。画面左の "Overview (概要)" が強調表示されており、画面右では、"kubernetes" の横に緑のチェック マークが表示されています。その下の "Secrets (シークレット)" には、default-token-s6kmc が表示されています。](media/image77.png)
 
    > **注**: トンネルの処理に失敗し、JSON の出力が表示されない場合は、以下のコマンドを実行し、タスク 5 に戻ります。
    >
@@ -3437,7 +3437,7 @@ YAML を使用して定義します。
 6. Azure DevOps から最新の変更を取得してスターター ファイルを更新します。
 
     ```bash
-    cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/developer/content-web
+    cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/infrastructure/content-web
     git pull
     ```
 
@@ -4104,7 +4104,7 @@ API デプロイメントと同様に Web デプロイメントでは、固定�
 2. Azure DevOps から最新の変更を取得してスターター ファイルを更新します。
 
    ```bash
-   cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/developer/content-web
+   cd ~/MCW-Cloud-native-applications/Hands-on\ lab/lab-files/infrastructure/content-web
    git pull
    ```
 
@@ -4120,7 +4120,7 @@ API デプロイメントと同様に Web デプロイメントでは、固定�
    code app.js
    ```
 
-5. `express` がインスタンス化されたらすぐに、以下の行を追加します。
+5. `express` がインスタンス化されたらすぐに、以下の行を追加します。 `[YOUR APPINSIGHTS KEY]` は 1 で取得した値で置き換えてください。
 
    ```javascript
    const appInsights = require("applicationinsights");
@@ -4159,11 +4159,19 @@ API デプロイメントと同様に Web デプロイメントでは、固定�
 1. helm パッケージの一覧を更新します。
 
    ```bash
+   helm repo add stable https://kubernetes-charts.storage.googleapis.com/
    helm repo update
    ```
+   see also for helm 2: https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-helm
 
 2. 受信したイングレス リクエストを処理する、イングレス コントローラーのリソースをインストールします。イングレス コントローラーは、Azure Load Balancer の独自のパブリック IP を受け取り、ポート 80 とポート 443 で複数のサービスに対するリクエストを処理できます。
 
+   helm 3 の場合 
+   ```bash
+   helm install my-nginx-ingress stable/nginx-ingress --namespace kube-system --set controller.replicaCount=2
+   ```
+
+   Info: helm 2 の場合 (https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-helm)
    ```bash
    helm install stable/nginx-ingress --namespace kube-system --set controller.replicaCount=2
    ```
@@ -4316,7 +4324,7 @@ API デプロイメントと同様に Web デプロイメントでは、固定�
     kubectl create --save-config=true -f certificate.yml
     ```
 
-    > **注**: 証明書の発行の状態を確認するには、`kubectl で証明書の tls-secret コマンドを記述`し、以下のような _Events_ 出力を探します。
+    > **注**: 証明書の発行の状態を確認するには、`kubectl describe certificate tls-secret` コマンドを使い、以下のような _Events_ 出力を探します。
     >
     > ```text
     > Type    Reason         Age   From          Message
