@@ -285,7 +285,18 @@ In this section, you configure and execute an ARM template that creates all the 
 
    ![In this screenshot of the Azure Cloud Shell editor window, the ... button has been selected, and the Close Editor option is highlighted.](media/b4-image63.png)
 
-6. Create the needed resources by typing the following instruction (case sensitive), replacing {resourceGroup} with the name of the previously created resource group:
+6. Edit Kubernetes version to the current available version.
+
+   ```bash
+   code azuredeploy.json
+   ```
+
+Line 110:
+   ```bash
+   "kubernetesVersion": "1.15.12",
+   ```
+
+7. Create the needed resources by typing the following instruction (case sensitive), replacing {resourceGroup} with the name of the previously created resource group:
 
    ```bash
    az group deployment create --resource-group {resourceGroup} --template-file azuredeploy.json --parameters azuredeploy.parameters.json
@@ -737,19 +748,19 @@ You should follow all steps provided _before_ performing the Hands-on lab.
 **このドキュメントの内容**
 
 <!-- TOC -->
-- [クラウド ネイティブのアプリケーションに関するハンズオン ラボの事前セットアップ ガイド <a name="クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド"></a>](#クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド-a-nameクラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイドa)
-    - [前提条件 <a name="前提条件"></a>](#前提条件-a-name前提条件a)
-    - [ハンズオン ラボを始める前に <a name="ハンズオン-ラボを始める前に"></a>](#ハンズオン-ラボを始める前に-a-nameハンズオン-ラボを始める前にa)
-        - [タスク 1: Azure Cloud Shell のセットアップ <a name="タスク-1-azure-cloud-shell-のセットアップ"></a>](#タスク-1-azure-cloud-shell-のセットアップ-a-nameタスク-1-azure-cloud-shell-のセットアップa)
-        - [タスク 2: スターター ファイルのダウンロード <a name="タスク-2-スターター-ファイルのダウンロード"></a>](#タスク-2-スターター-ファイルのダウンロード-a-nameタスク-2-スターター-ファイルのダウンロードa)
-        - [タスク 3: リソース グループ <a name="タスク-3-リソース-グループ"></a>](#タスク-3-リソース-グループ-a-nameタスク-3-リソース-グループa)
-        - [タスク 4: SSH キーの作成 <a name="タスク-4-ssh-キーの作成"></a>](#タスク-4-ssh-キーの作成-a-nameタスク-4-ssh-キーの作成a)
-        - [タスク 5: サービス プリンシパルの作成 <a name="タスク-5-サービス-プリンシパルの作成"></a>](#タスク-5-サービス-プリンシパルの作成-a-nameタスク-5-サービス-プリンシパルの作成a)
-        - [タスク 6: ARM テンプレートの展開 <a name="タスク-6-arm-テンプレートの展開"></a>](#タスク-6-arm-テンプレートの展開-a-nameタスク-6-arm-テンプレートの展開a)
-        - [タスク 7: Azure DevOps プロジェクトのセットアップ <a name="タスク-7-azure-devops-プロジェクトのセットアップ"></a>](#タスク-7-azure-devops-プロジェクトのセットアップ-a-nameタスク-7-azure-devops-プロジェクトのセットアップa)
-        - [タスク 8: ビルド エージェントとのセキュアな接続 <a name="タスク-8-ビルド-エージェントとのセキュアな接続"></a>](#タスク-8-ビルド-エージェントとのセキュアな接続-a-nameタスク-8-ビルド-エージェントとのセキュアな接続a)
-        - [タスク 9: ビルド エージェントのセットアップの完了 <a name="タスク-9-ビルド-エージェントのセットアップの完了"></a>](#タスク-9-ビルド-エージェントのセットアップの完了-a-nameタスク-9-ビルド-エージェントのセットアップの完了a)
-        - [タスク 10: リポジトリをビルド エージェントに複製 <a name="タスク-10-リポジトリをビルド-エージェントに複製"></a>](#タスク-10-リポジトリをビルド-エージェントに複製-a-nameタスク-10-リポジトリをビルド-エージェントに複製a)
+- [クラウド ネイティブのアプリケーションに関するハンズオン ラボの事前セットアップ ガイド <a name="クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド"></a>](#クラウド-ネイティブのアプリケーションに関するハンズオン-ラボの事前セットアップ-ガイド)
+  - [前提条件 <a name="前提条件"></a>](#前提条件)
+  - [ハンズオン ラボを始める前に <a name="ハンズオン-ラボを始める前に"></a>](#ハンズオン-ラボを始める前に)
+    - [タスク 1: Azure Cloud Shell のセットアップ <a name="タスク-1-azure-cloud-shell-のセットアップ"></a>](#タスク-1-azure-cloud-shell-のセットアップ)
+    - [タスク 2: スターター ファイルのダウンロード <a name="タスク-2-スターター-ファイルのダウンロード"></a>](#タスク-2-スターター-ファイルのダウンロード)
+    - [タスク 3: リソース グループ <a name="タスク-3-リソース-グループ"></a>](#タスク-3-リソース-グループ)
+    - [タスク 4: SSH キーの作成 <a name="タスク-4-ssh-キーの作成"></a>](#タスク-4-ssh-キーの作成)
+    - [タスク 5: サービス プリンシパルの作成 <a name="タスク-5-サービス-プリンシパルの作成"></a>](#タスク-5-サービス-プリンシパルの作成)
+    - [タスク 6: ARM テンプレートの展開 <a name="タスク-6-arm-テンプレートの展開"></a>](#タスク-6-arm-テンプレートの展開)
+    - [タスク 7: Azure DevOps プロジェクトのセットアップ <a name="タスク-7-azure-devops-プロジェクトのセットアップ"></a>](#タスク-7-azure-devops-プロジェクトのセットアップ)
+    - [タスク 8: ビルド エージェントとのセキュアな接続 <a name="タスク-8-ビルド-エージェントとのセキュアな接続"></a>](#タスク-8-ビルド-エージェントとのセキュアな接続)
+    - [タスク 9: ビルド エージェントのセットアップの完了 <a name="タスク-9-ビルド-エージェントのセットアップの完了"></a>](#タスク-9-ビルド-エージェントのセットアップの完了)
+    - [タスク 10: リポジトリをビルド エージェントに複製 <a name="タスク-10-リポジトリをビルド-エージェントに複製"></a>](#タスク-10-リポジトリをビルド-エージェントに複製)
 
 <!-- /TOC -->
 
@@ -1062,7 +1073,18 @@ Azure Kubernetes Service には、Azure API とやり取りをするために、
 
    ![Azure Cloud Shell エディターのウィンドウのスクリーンショットです。ここでは、[...] ボタンが選択されており、[Close Editor (エディターを閉じる)] のオプションが強調表示されています。](media/b4-image63.png)
 
-6. 以下の命令 (大文字と小文字の区別あり) を入力し、必要なリソースを作成します。{resourceGroup} はタスク3で作成したリソース グループの名前と置き換えます。
+6. 同様に azuredeploy.json を編集して、Kubernetes version を現在利用可能なバージョンに変更して、保存します。
+
+   ```bash
+   code azuredeploy.json
+   ```
+
+Line 110:
+   ```bash
+   "kubernetesVersion": "1.15.12",
+   ```
+
+7. 以下の命令 (大文字と小文字の区別あり) を入力し、必要なリソースを作成します。{resourceGroup} はタスク3で作成したリソース グループの名前と置き換えます。
 
    ```bash
    az group deployment create --resource-group {resourceGroup} --template-file azuredeploy.json --parameters azuredeploy.parameters.json
